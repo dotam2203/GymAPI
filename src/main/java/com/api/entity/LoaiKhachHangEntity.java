@@ -29,5 +29,5 @@ public class LoaiKhachHangEntity {
     private String tenLoaiKH;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "loaiKH")
-    private List<KhachHangEntity> khachHangList;
+    private List<KhachHangEntity> khachHangs;
 }

@@ -50,15 +50,15 @@ public class KhachHangEntity {
     @Nationalized
     private String diaChi;
 
-    @Basic(optional = false)
     @Nationalized
     @Column(name = "HinhAnh")
     private String hinhAnh;
 
     @JoinColumn(name = "MaLoaiKH")
     @ManyToOne
+    @Basic(optional = false)
     private LoaiKhachHangEntity loaiKH;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "khachHang")
-    private List<TheTapEntity> theTapList;
+    private List<TheTapEntity> theTaps;
 }

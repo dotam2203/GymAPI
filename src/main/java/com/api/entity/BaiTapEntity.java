@@ -31,7 +31,6 @@ public class BaiTapEntity {
     @Nationalized
     private String tenBT;
 
-    @Basic(optional = false)
     @Column(name = "MoTa")
     @Nationalized
     private String moTa;
@@ -41,5 +40,5 @@ public class BaiTapEntity {
     private String duongDan;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "baiTap")
-    private List<CtBaiTapEntity> ctBaiTapList;
+    private List<CtBaiTapEntity> ctBaiTaps;
 }

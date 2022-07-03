@@ -32,6 +32,7 @@ public class TaiKhoanEntity {
 
     @JoinColumn(name = "MaQuyen")
     @ManyToOne
+    @Basic(optional = false)
     private PhanQuyenEntity phanQuyen;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "taiKhoan")

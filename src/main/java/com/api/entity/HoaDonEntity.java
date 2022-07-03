@@ -35,13 +35,15 @@ public class HoaDonEntity {
     private Date ngayLap;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "hoaDon")
-    private List<CtTheTapEntity> ctTheTapList;
+    private List<CtTheTapEntity> ctTheTaps;
 
     @JoinColumn(name = "MaNV")
     @ManyToOne
+    @Basic(optional = false)
     private NhanVienEntity nhanVien;
 
     @JoinColumn(name = "MaThe")
     @ManyToOne
+    @Basic(optional = false)
     private TheTapEntity theTap;
 }

@@ -34,6 +34,6 @@ public class PhanQuyenEntity {
     private String tenQuyen;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "phanQuyen")
-    private List<TaiKhoanEntity> taiKhoanList;
+    private List<TaiKhoanEntity> taiKhoans;
 }
 

@@ -26,9 +26,11 @@ public class CtBaiTapEntity {
 
     @JoinColumn(name = "MaBaiTap")
     @ManyToOne
+    @Basic(optional = false)
     private BaiTapEntity baiTap;
 
     @JoinColumn(name = "MaGoiTap")
     @ManyToOne
+    @Basic(optional = false)
     private GoiTapEntity goiTap;
 }

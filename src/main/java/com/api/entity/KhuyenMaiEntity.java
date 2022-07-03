@@ -46,8 +46,9 @@ public class KhuyenMaiEntity {
 
     @JoinColumn(name = "MaNV")
     @ManyToOne
+    @Basic(optional = false)
     private NhanVienEntity nhanVien;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "khuyenMai")
-    private List<CtKhuyenMaiEntity> ctKhuyenMaiList;
+    private List<CtKhuyenMaiEntity> ctKhuyenMais;
 }

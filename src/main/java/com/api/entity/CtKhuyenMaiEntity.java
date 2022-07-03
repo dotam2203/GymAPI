@@ -26,14 +26,16 @@ public class CtKhuyenMaiEntity {
 
     @Basic(optional = false)
     @Column(name = "PhanTramGiamGia")
-    private Integer phanTramGiam;
+    private Float phanTramGiam;
 
     @JoinColumn(name = "MaKM")
     @ManyToOne
+    @Basic(optional = false)
     private KhuyenMaiEntity khuyenMai;
 
     @JoinColumn(name = "MaGoiTap")
     @ManyToOne
+    @Basic(optional = false)
     private GoiTapEntity goiTap;
 
 }

@@ -32,13 +32,16 @@ public class CtTheTapEntity {
 
     @JoinColumn(name = "MaGoiTap")
     @ManyToOne
+    @Basic(optional = false)
     private GoiTapEntity goiTap;
 
     @JoinColumn(name = "MaHD")
     @ManyToOne
+    @Basic(optional = false)
     private HoaDonEntity hoaDon;
 
     @JoinColumn(name = "MaThe")
     @ManyToOne
+    @Basic(optional = false)
     private TheTapEntity theTap;
 }

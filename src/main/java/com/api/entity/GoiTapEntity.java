@@ -41,17 +41,18 @@ public class GoiTapEntity {
 
     @JoinColumn(name = "MaLoaiGT")
     @ManyToOne
+    @Basic(optional = false)
     private LoaiGoiTapEntity maLoaiGT;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
-    private List<GiaGoiTapEntity> giaGoiTapList;
+    private List<GiaGoiTapEntity> giaGoiTaps;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
-    private List<CtTheTapEntity> ctTheTapList;
+    private List<CtTheTapEntity> ctTheTaps;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
-    private List<CtKhuyenMaiEntity> ctKhuyenMaiList;
+    private List<CtKhuyenMaiEntity> ctKhuyenMais;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
-    private List<CtBaiTapEntity> ctBaiTapList;
+    private List<CtBaiTapEntity> ctBaiTaps;
 }

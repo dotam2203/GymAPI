@@ -29,17 +29,21 @@ public class GiaGoiTapEntity {
     @Column(name = "NgayApDung")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Basic(optional = false)
     private Date ngayApDung;
 
     @Column(name = "Gia")
     @Nationalized
+    @Basic(optional = false)
     private String gia;
 
     @JoinColumn(name = "MaGoiTap")
     @ManyToOne
+    @Basic(optional = false)
     private GoiTapEntity goiTap;
 
     @JoinColumn(name = "MaNV")
     @ManyToOne
+    @Basic(optional = false)
     private NhanVienEntity nhanVien;
 }

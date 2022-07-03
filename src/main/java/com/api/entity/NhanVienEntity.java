@@ -50,21 +50,21 @@ public class NhanVienEntity {
     @Nationalized
     private String diaChi;
 
-    @Basic(optional = false)
     @Column(name = "HinhAnh")
     @Nationalized
     private String hinhAnh;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "nhanVien")
-    private List<GiaGoiTapEntity> giaGoiTapList;
+    private List<GiaGoiTapEntity> giaGoiTaps;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "nhanVien")
-    private List<KhuyenMaiEntity> khuyenMaiList;
+    private List<KhuyenMaiEntity> khuyenMais;
 
     @JoinColumn(name = "MaTK", unique = true)
     @OneToOne
+    @Basic(optional = false)
     private TaiKhoanEntity taiKhoan;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "nhanVien")
-    private List<HoaDonEntity> hoaDonList;
+    private List<HoaDonEntity> hoaDons;
 }
