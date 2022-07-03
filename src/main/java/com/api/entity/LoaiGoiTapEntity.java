@@ -36,6 +36,6 @@ public class LoaiGoiTapEntity {
     @Nationalized
     private String trangThai;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "maLoaiGT")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "loaiGT")
     private List<GoiTapEntity> goiTaps;
 }

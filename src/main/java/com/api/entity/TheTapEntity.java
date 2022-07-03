@@ -51,13 +51,13 @@ public class TheTapEntity {
     @Nationalized
     private String trangThai;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "theTap")
-    private List<CtTheTapEntity> ctTheTaps;
-
     @JoinColumn(name = "MaKH")
     @ManyToOne
     @Basic(optional = false)
     private KhachHangEntity khachHang;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "theTap")
+    private List<CtTheTapEntity> ctTheTaps;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "theTap")
     private List<HoaDonEntity> hoaDons;

@@ -42,7 +42,7 @@ public class GoiTapEntity {
     @JoinColumn(name = "MaLoaiGT")
     @ManyToOne
     @Basic(optional = false)
-    private LoaiGoiTapEntity maLoaiGT;
+    private LoaiGoiTapEntity loaiGT;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
     private List<GiaGoiTapEntity> giaGoiTaps;
