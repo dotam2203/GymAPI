@@ -1,11 +1,19 @@
 package com.api.dto;
 
 import com.api.entity.TaiKhoanEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Author: tamdt35@fpt.com.vn
  * Date:  03/07/2022
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TaiKhoanDTO {
     private String maTK;
     private String matKhau;

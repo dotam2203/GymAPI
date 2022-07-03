@@ -1,6 +1,10 @@
 package com.api.dto;
 
 import com.api.entity.KhuyenMaiEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
@@ -10,6 +14,10 @@ import java.util.stream.Collectors;
  * Author: tamdt35@fpt.com.vn
  * Date:  03/07/2022
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class KhuyenMaiDTO {
     private String maKM;
     private String moTa;

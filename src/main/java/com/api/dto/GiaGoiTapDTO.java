@@ -1,6 +1,10 @@
 package com.api.dto;
 
 import com.api.entity.GiaGoiTapEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -8,6 +12,10 @@ import java.util.Date;
  * Author: tamdt35@fpt.com.vn
  * Date:  03/07/2022
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class GiaGoiTapDTO {
     private Integer idGia;
     private Date ngayApDung;

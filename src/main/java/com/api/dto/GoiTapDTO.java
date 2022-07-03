@@ -1,6 +1,10 @@
 package com.api.dto;
 
 import com.api.entity.GoiTapEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,6 +13,10 @@ import java.util.stream.Collectors;
  * Author: tamdt35@fpt.com.vn
  * Date:  03/07/2022
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class GoiTapDTO {
     private String maGoiTap;
     private String tenGoiTap;
