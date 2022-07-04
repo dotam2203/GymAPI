@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 public class KhachHangServiceImlp implements KhachHangService {
     @Autowired
     KhachHangRepository khachHangRepository;
+    @Autowired
     LoaiKHRepository loaiKHRepository;
 
     @Override
