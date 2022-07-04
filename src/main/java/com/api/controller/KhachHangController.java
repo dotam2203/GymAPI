@@ -24,13 +24,13 @@ public class KhachHangController {
         return khachHangService.layDSKhachHang();
     }
 
-    @GetMapping("/ds/{maLoaiKH}")
-    public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@PathVariable String maLoaiKH) {
+    @GetMapping("/dskh")
+    public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@RequestParam(value = "maLoaiKH") String maLoaiKH) {
             return khachHangService.layDSKhachHangTheoLoaiKH(maLoaiKH);
     }
 
-    @GetMapping("/{maKH}")
-    public KhachHangDTO layKhachHang(@PathVariable String maKH) {
+    @GetMapping("/kh")
+    public KhachHangDTO layKhachHang(@RequestParam(value = "maKH") String maKH) {
         return khachHangService.layKhachHang(maKH);
     }
 

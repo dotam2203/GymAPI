@@ -24,13 +24,13 @@ public class GoiTapController {
         return goiTapService.layDSGoiTap();
     }
 
-    @GetMapping("/ds/{maLoaiGT}")
-    public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@PathVariable String maLoaiGT) {
+    @GetMapping("/dsgt")
+    public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@RequestParam(value = "maLoaiGT") String maLoaiGT) {
         return goiTapService.layDSGoiTapTheoLoaiGT(maLoaiGT);
     }
 
-    @GetMapping("/{maGoiTap}")
-    public GoiTapDTO layGoiTap(@PathVariable String maGoiTap){
+    @GetMapping("/gt")
+    public GoiTapDTO layGoiTap(@RequestParam(value = "maGoiTap") String maGoiTap){
         return goiTapService.layGoiTap(maGoiTap);
     }
 
