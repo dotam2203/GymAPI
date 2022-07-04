@@ -13,7 +13,7 @@ import java.util.List;
  * Date:  04/07/2022
  */
 @RestController
-@RequestMapping("/api/loaikh")
+@RequestMapping("/loaikh")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class LoaiKHController {
     @Autowired
