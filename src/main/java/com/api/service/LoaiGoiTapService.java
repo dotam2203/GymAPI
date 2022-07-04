@@ -13,5 +13,4 @@ public interface LoaiGoiTapService {
     LoaiGoiTapDTO themLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO);
     LoaiGoiTapDTO suaLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO);
     void xoaLoaiGoiTap(String maLoaiGT);
-
 }
