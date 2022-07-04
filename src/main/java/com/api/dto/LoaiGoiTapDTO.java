@@ -17,13 +17,13 @@ import java.util.stream.Collectors;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoaiGoitapDTO {
+public class LoaiGoiTapDTO {
     private String maLoaiGT;
     private String tenLoaiGT;
     private String trangThai;
     private List<GoiTapDTO> goiTaps;
 
-    public LoaiGoitapDTO(LoaiGoiTapEntity loaiGoiTap) {
+    public LoaiGoiTapDTO(LoaiGoiTapEntity loaiGoiTap) {
         this.maLoaiGT = loaiGoiTap.getMaLoaiGT();
         this.tenLoaiGT = loaiGoiTap.getTenLoaiGT();
         this.trangThai = loaiGoiTap.getTrangThai();

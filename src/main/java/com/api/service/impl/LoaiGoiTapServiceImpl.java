@@ -1,6 +1,6 @@
 package com.api.service.impl;
 
-import com.api.dto.LoaiGoitapDTO;
+import com.api.dto.LoaiGoiTapDTO;
 import com.api.entity.LoaiGoiTapEntity;
 import com.api.repository.LoaiGoiTapRepository;
 import com.api.service.LoaiGoitapService;
@@ -20,25 +20,25 @@ public class LoaiGoiTapServiceImpl implements LoaiGoitapService {
     LoaiGoiTapRepository loaiGoiTapRepository;
 
     @Override
-    public List<LoaiGoitapDTO> layDSLoaiGoiTap() {
+    public List<LoaiGoiTapDTO> layDSLoaiGoiTap() {
         List<LoaiGoiTapEntity> dsLoaiGT = loaiGoiTapRepository.findAll();
-        return dsLoaiGT.stream().map(LoaiGoitapDTO::new).collect(Collectors.toList());
+        return dsLoaiGT.stream().map(LoaiGoiTapDTO::new).collect(Collectors.toList());
     }
 
     @Override
-    public LoaiGoitapDTO themLoaiGoiTap(LoaiGoitapDTO loaiGoitapDTO) {
+    public LoaiGoiTapDTO themLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO) {
         LoaiGoiTapEntity luuLoaiGT = loaiGoiTapRepository.save(loaiGoitapDTO.toEntity());
-        return new LoaiGoitapDTO(luuLoaiGT);
+        return new LoaiGoiTapDTO(luuLoaiGT);
     }
 
     @Override
-    public LoaiGoitapDTO suaLoaiGoiTap(LoaiGoitapDTO loaiGoitapDTO) {
+    public LoaiGoiTapDTO suaLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO) {
         LoaiGoiTapEntity loaiGoiTap = loaiGoiTapRepository.getById(loaiGoitapDTO.getMaLoaiGT());
         loaiGoiTap.setMaLoaiGT(loaiGoiTap.getMaLoaiGT());
         loaiGoiTap.setTenLoaiGT(loaiGoiTap.getTenLoaiGT());
         loaiGoiTap.setTrangThai(loaiGoiTap.getTrangThai());
         LoaiGoiTapEntity luuLoaiGT = loaiGoiTapRepository.save(loaiGoitapDTO.toEntity());
-        return new LoaiGoitapDTO(luuLoaiGT);
+        return new LoaiGoiTapDTO(luuLoaiGT);
     }
 
     @Override

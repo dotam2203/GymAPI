@@ -1,6 +1,6 @@
 package com.api.service;
 
-import com.api.dto.LoaiGoitapDTO;
+import com.api.dto.LoaiGoiTapDTO;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import java.util.List;
  * Date:  03/07/2022
  */
 public interface LoaiGoitapService {
-    public List<LoaiGoitapDTO> layDSLoaiGoiTap();
-    LoaiGoitapDTO themLoaiGoiTap(LoaiGoitapDTO loaiGoitapDTO);
-    LoaiGoitapDTO suaLoaiGoiTap(LoaiGoitapDTO loaiGoitapDTO);
+    List<LoaiGoiTapDTO> layDSLoaiGoiTap();
+    LoaiGoiTapDTO themLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO);
+    LoaiGoiTapDTO suaLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO);
     void xoaLoaiGoiTap(String maLoaiGT);
 
 }

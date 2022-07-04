@@ -1,6 +1,6 @@
 package com.api.controller;
 
-import com.api.dto.LoaiGoitapDTO;
+import com.api.dto.LoaiGoiTapDTO;
 import com.api.service.LoaiGoitapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,17 +20,17 @@ public class LoaiGoiTapController {
     private LoaiGoitapService loaiGoitapService;
 
     @GetMapping("")
-    public List<LoaiGoitapDTO> layDSLoaiGoiTap() {
+    public List<LoaiGoiTapDTO> layDSLoaiGoiTap() {
         return loaiGoitapService.layDSLoaiGoiTap();
     }
 
     @PostMapping("")
-    public LoaiGoitapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoitapDTO loaiGoitapDTO) {
+    public LoaiGoiTapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoitapDTO) {
         return loaiGoitapService.themLoaiGoiTap(loaiGoitapDTO);
     }
 
     @PutMapping("")
-    public LoaiGoitapDTO suaLoaiGoiTap(@Valid @RequestBody LoaiGoitapDTO loaiGoitapDTO) {
+    public LoaiGoiTapDTO suaLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoitapDTO) {
         return loaiGoitapService.suaLoaiGoiTap(loaiGoitapDTO);
     }
 
