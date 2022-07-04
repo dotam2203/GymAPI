@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface LoaiKHRepository extends JpaRepository<LoaiKhachHangEntity, String> {
+
 }
