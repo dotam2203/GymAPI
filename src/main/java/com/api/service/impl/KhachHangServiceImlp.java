@@ -61,7 +61,8 @@ public class KhachHangServiceImlp implements KhachHangService {
         khachHang.setDiaChi(khachHang.getDiaChi());
         khachHang.setHinhAnh(khachHang.getHinhAnh());
         khachHang.setLoaiKH(loaiKH);
-        return new KhachHangDTO(khachHangRepository.save(khachHangDTO.toEntity()));
+        KhachHangEntity saveKhachHang = khachHangRepository.save(khachHang);
+        return new KhachHangDTO(saveKhachHang);
     }
 
     @Override
