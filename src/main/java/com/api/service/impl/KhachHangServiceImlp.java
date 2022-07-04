@@ -53,7 +53,6 @@ public class KhachHangServiceImlp implements KhachHangService {
     public KhachHangDTO suaKhachHang(KhachHangDTO khachHangDTO) {
         LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(khachHangDTO.getMaLoaiKH());
         KhachHangEntity khachHang = khachHangRepository.getById(khachHangDTO.getMaKH());
-        khachHang.setMaKH(khachHang.getMaKH());
         khachHang.setHoTen(khachHang.getHoTen());
         khachHang.setEmail(khachHang.getEmail());
         khachHang.setSdt(khachHang.getSdt());

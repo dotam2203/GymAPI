@@ -53,7 +53,6 @@ public class GoiTapServiceImpl implements GoiTapService {
     public GoiTapDTO suaGoiTap(GoiTapDTO goiTapDTO) {
         LoaiGoiTapEntity loaiGT = loaiGTRepository.getById(goiTapDTO.getMaLoaiGT());
         GoiTapEntity goiTap = goiTapRepository.getById(goiTapDTO.getMaGoiTap());
-        goiTap.setMaGoiTap(goiTap.getMaGoiTap());
         goiTap.setTenGoiTap(goiTap.getTenGoiTap());
         goiTap.setMoTa(goiTap.getMoTa());
         goiTap.setTrangThai(goiTap.getTrangThai());
