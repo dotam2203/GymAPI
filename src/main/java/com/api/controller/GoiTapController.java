@@ -40,7 +40,7 @@ public class GoiTapController {
     }
 
     @PutMapping("")
-    public GoiTapDTO suaoiTap(@Valid @RequestBody GoiTapDTO goiTapDTO) {
+    public GoiTapDTO suagoiTap(@Valid @RequestBody GoiTapDTO goiTapDTO) {
         return goiTapService.suaGoiTap(goiTapDTO);
     }
 
