@@ -1,7 +1,7 @@
 package com.api.controller;
 
 import com.api.dto.LoaiGoiTapDTO;
-import com.api.service.LoaiGoitapService;
+import com.api.service.LoaiGoiTapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,27 +17,25 @@ import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class LoaiGoiTapController {
     @Autowired
-    private LoaiGoitapService loaiGoitapService;
+    private LoaiGoiTapService loaiGoiTapService;
 
     @GetMapping("")
     public List<LoaiGoiTapDTO> layDSLoaiGoiTap() {
-        return loaiGoitapService.layDSLoaiGoiTap();
+        return loaiGoiTapService.layDSLoaiGoiTap();
     }
 
     @PostMapping("")
-    public LoaiGoiTapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoitapDTO) {
-        return loaiGoitapService.themLoaiGoiTap(loaiGoitapDTO);
+    public LoaiGoiTapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
+        return loaiGoiTapService.themLoaiGoiTap(loaiGoiTapDTO);
     }
 
     @PutMapping("")
-    public LoaiGoiTapDTO suaLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoitapDTO) {
-        return loaiGoitapService.suaLoaiGoiTap(loaiGoitapDTO);
+    public LoaiGoiTapDTO suaLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
+        return loaiGoiTapService.suaLoaiGoiTap(loaiGoiTapDTO);
     }
 
     @DeleteMapping("/{maLoaiGT}")
     public void xoaLoaiGoiTap(@PathVariable String maLoaiGT) {
-        loaiGoitapService.xoaLoaiGoiTap(maLoaiGT);
+        loaiGoiTapService.xoaLoaiGoiTap(maLoaiGT);
     }
-
-
 }

@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface GoiTapService {
     List<GoiTapDTO> layDSGoiTap();
+    List<GoiTapDTO> layDSGoiTapTheoLoaiGT(String maLoaiGT);
+    GoiTapDTO layGoiTap(String maGoiTap);
     GoiTapDTO themGoiTap(GoiTapDTO goiTapDTO);
     GoiTapDTO suaGoiTap(GoiTapDTO goiTapDTO);
     void xoaGoiTap(String maGoiTap);

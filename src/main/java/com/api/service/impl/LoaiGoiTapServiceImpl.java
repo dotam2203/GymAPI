@@ -3,7 +3,7 @@ package com.api.service.impl;
 import com.api.dto.LoaiGoiTapDTO;
 import com.api.entity.LoaiGoiTapEntity;
 import com.api.repository.LoaiGoiTapRepository;
-import com.api.service.LoaiGoitapService;
+import com.api.service.LoaiGoiTapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  * Date:  03/07/2022
  */
 @Service
-public class LoaiGoiTapServiceImpl implements LoaiGoitapService {
+public class LoaiGoiTapServiceImpl implements LoaiGoiTapService {
     @Autowired
     LoaiGoiTapRepository loaiGoiTapRepository;
 
@@ -27,8 +27,7 @@ public class LoaiGoiTapServiceImpl implements LoaiGoitapService {
 
     @Override
     public LoaiGoiTapDTO themLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO) {
-        LoaiGoiTapEntity luuLoaiGT = loaiGoiTapRepository.save(loaiGoitapDTO.toEntity());
-        return new LoaiGoiTapDTO(luuLoaiGT);
+        return new LoaiGoiTapDTO(loaiGoiTapRepository.save(loaiGoitapDTO.toEntity()));
     }
 
     @Override
@@ -37,8 +36,7 @@ public class LoaiGoiTapServiceImpl implements LoaiGoitapService {
         loaiGoiTap.setMaLoaiGT(loaiGoiTap.getMaLoaiGT());
         loaiGoiTap.setTenLoaiGT(loaiGoiTap.getTenLoaiGT());
         loaiGoiTap.setTrangThai(loaiGoiTap.getTrangThai());
-        LoaiGoiTapEntity luuLoaiGT = loaiGoiTapRepository.save(loaiGoitapDTO.toEntity());
-        return new LoaiGoiTapDTO(luuLoaiGT);
+        return new LoaiGoiTapDTO(loaiGoiTapRepository.save(loaiGoitapDTO.toEntity()));
     }
 
     @Override

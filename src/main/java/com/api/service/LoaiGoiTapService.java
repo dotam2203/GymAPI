@@ -8,7 +8,7 @@ import java.util.List;
  * Author: tamdt35@fpt.com.vn
  * Date:  03/07/2022
  */
-public interface LoaiGoitapService {
+public interface LoaiGoiTapService {
     List<LoaiGoiTapDTO> layDSLoaiGoiTap();
     LoaiGoiTapDTO themLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO);
     LoaiGoiTapDTO suaLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO);
