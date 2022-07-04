@@ -31,7 +31,7 @@ public class GoiTapServiceImpl implements GoiTapService {
 
     @Override
     public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(String maLoaiGT) {
-        List<GoiTapEntity> dsGoiTapTheoLoaiGT = goiTapRepository.findByLoaiGoiTap_MaLoaiGT(maLoaiGT);
+        List<GoiTapEntity> dsGoiTapTheoLoaiGT = goiTapRepository.findByLoaiGT_MaLoaiGT(maLoaiGT);
         return dsGoiTapTheoLoaiGT.stream().map(GoiTapDTO::new).collect(Collectors.toList());
     }
 

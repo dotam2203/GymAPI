@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface GoiTapRepository extends JpaRepository<GoiTapEntity,String> {
-    List<GoiTapEntity> findByLoaiGoiTap_MaLoaiGT(String maLoaiGT);
+    List<GoiTapEntity> findByLoaiGT_MaLoaiGT(String maLoaiGT);
 }
