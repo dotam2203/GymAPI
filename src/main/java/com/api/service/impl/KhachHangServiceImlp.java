@@ -37,7 +37,7 @@ public class KhachHangServiceImlp implements KhachHangService {
 
     @Override
     public KhachHangDTO layKhachHang(String maKH) {
-        KhachHangEntity khachHang = khachHangRepository.findById(maKH).orElseThrow(() -> new RuntimeException("Khách hàng " + maKH + " không tồn tại!"));
+        KhachHangEntity khachHang = khachHangRepository.getById(maKH);
         return new KhachHangDTO(khachHang);
     }
 

@@ -37,7 +37,7 @@ public class GoiTapServiceImpl implements GoiTapService {
 
     @Override
     public GoiTapDTO layGoiTap(String maGoiTap) {
-        GoiTapEntity goiTap = goiTapRepository.findById(maGoiTap).orElseThrow(() -> new RuntimeException("Gói tập " + maGoiTap + " không tồn tại!"));
+        GoiTapEntity goiTap = goiTapRepository.getById(maGoiTap);
         return new GoiTapDTO(goiTap);
     }
 
