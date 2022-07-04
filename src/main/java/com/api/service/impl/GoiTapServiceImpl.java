@@ -58,7 +58,7 @@ public class GoiTapServiceImpl implements GoiTapService {
         goiTap.setMoTa(goiTap.getMoTa());
         goiTap.setTrangThai(goiTap.getTrangThai());
         goiTap.setLoaiGT(loaiGT);
-        return new GoiTapDTO(goiTapRepository.save(goiTap));
+        return new GoiTapDTO(goiTapRepository.save(goiTapDTO.toEntity()));
     }
 
     @Override
