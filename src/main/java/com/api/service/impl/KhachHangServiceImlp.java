@@ -51,14 +51,14 @@ public class KhachHangServiceImlp implements KhachHangService {
 
     @Override
     public KhachHangDTO suaKhachHang(KhachHangDTO khachHangDTO) {
+        KhachHangEntity khachHang = khachHangRepository.getById(khachHangDTO.getMaKH());
         LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(khachHangDTO.getMaLoaiKH());
-        KhachHangEntity khachHang = khachHangRepository.findById(khachHangDTO.getMaKH()).orElseThrow(()-> new RuntimeException("Fail"));
-        khachHang.setHoTen(khachHang.getHoTen());
-        khachHang.setEmail(khachHang.getEmail());
-        khachHang.setSdt(khachHang.getSdt());
-        khachHang.setPhai(khachHang.getPhai());
-        khachHang.setDiaChi(khachHang.getDiaChi());
-        khachHang.setHinhAnh(khachHang.getHinhAnh());
+        khachHang.setHoTen(khachHangDTO.getHoTen());
+        khachHang.setEmail(khachHangDTO.getEmail());
+        khachHang.setSdt(khachHangDTO.getSdt());
+        khachHang.setPhai(khachHangDTO.getPhai());
+        khachHang.setDiaChi(khachHangDTO.getDiaChi());
+        khachHang.setHinhAnh(khachHangDTO.getHinhAnh());
         khachHang.setLoaiKH(loaiKH);
         KhachHangEntity saveKhachHang = khachHangRepository.save(khachHang);
         return new KhachHangDTO(saveKhachHang);

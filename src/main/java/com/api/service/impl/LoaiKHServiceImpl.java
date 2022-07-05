@@ -32,8 +32,8 @@ public class LoaiKHServiceImpl implements LoaiKHService {
     @Override
     public LoaiKhachHangDTO suaLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO) {
         LoaiKhachHangEntity loaiKhachHang = loaiKHRepository.getById(loaiKhachHangDTO.getMaLoaiKH());
-        loaiKhachHang.setMaLoaiKH(loaiKhachHang.getMaLoaiKH());
-        loaiKhachHang.setTenLoaiKH(loaiKhachHang.getTenLoaiKH());
+        loaiKhachHang.setMaLoaiKH(loaiKhachHangDTO.getMaLoaiKH());
+        loaiKhachHang.setTenLoaiKH(loaiKhachHangDTO.getTenLoaiKH());
         return new LoaiKhachHangDTO(loaiKHRepository.save(loaiKhachHangDTO.toEntity()));
     }
 
