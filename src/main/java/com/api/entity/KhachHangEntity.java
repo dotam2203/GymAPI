@@ -59,6 +59,6 @@ public class KhachHangEntity {
     @Basic(optional = false)
     private LoaiKhachHangEntity loaiKH;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "khachHang")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "khachHang")
     private List<TheTapEntity> theTaps;
 }

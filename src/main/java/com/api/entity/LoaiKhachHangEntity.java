@@ -28,6 +28,6 @@ public class LoaiKhachHangEntity {
     @Column(name = "TenLoaiKH")
     private String tenLoaiKH;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "loaiKH")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "loaiKH")
     private List<KhachHangEntity> khachHangs;
 }

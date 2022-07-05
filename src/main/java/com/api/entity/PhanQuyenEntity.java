@@ -33,7 +33,7 @@ public class PhanQuyenEntity {
     @Nationalized
     private String tenQuyen;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "phanQuyen")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "phanQuyen")
     private List<TaiKhoanEntity> taiKhoans;
 }
 

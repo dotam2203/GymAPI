@@ -49,6 +49,6 @@ public class KhuyenMaiEntity {
     @Basic(optional = false)
     private NhanVienEntity nhanVien;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "khuyenMai")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "khuyenMai")
     private List<CtKhuyenMaiEntity> ctKhuyenMais;
 }

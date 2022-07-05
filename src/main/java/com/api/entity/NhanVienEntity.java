@@ -59,12 +59,12 @@ public class NhanVienEntity {
     @Basic(optional = false)
     private TaiKhoanEntity taiKhoan;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "nhanVien")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "nhanVien")
     private List<GiaGoiTapEntity> giaGoiTaps;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "nhanVien")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "nhanVien")
     private List<KhuyenMaiEntity> khuyenMais;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "nhanVien")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "nhanVien")
     private List<HoaDonEntity> hoaDons;
 }

@@ -39,6 +39,6 @@ public class BaiTapEntity {
     @Nationalized
     private String duongDan;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "baiTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "baiTap")
     private List<CtBaiTapEntity> ctBaiTaps;
 }

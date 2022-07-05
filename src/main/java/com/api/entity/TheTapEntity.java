@@ -56,9 +56,9 @@ public class TheTapEntity {
     @Basic(optional = false)
     private KhachHangEntity khachHang;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "theTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "theTap")
     private List<CtTheTapEntity> ctTheTaps;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "theTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "theTap")
     private List<HoaDonEntity> hoaDons;
 }

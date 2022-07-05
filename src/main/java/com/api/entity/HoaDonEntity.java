@@ -34,7 +34,7 @@ public class HoaDonEntity {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date ngayLap;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "hoaDon")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "hoaDon")
     private List<CtTheTapEntity> ctTheTaps;
 
     @JoinColumn(name = "MaNV")

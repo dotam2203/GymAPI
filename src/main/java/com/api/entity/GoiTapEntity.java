@@ -44,15 +44,15 @@ public class GoiTapEntity {
     @Basic(optional = false)
     private LoaiGoiTapEntity loaiGT;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "goiTap")
     private List<GiaGoiTapEntity> giaGoiTaps;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "goiTap")
     private List<CtTheTapEntity> ctTheTaps;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "goiTap")
     private List<CtKhuyenMaiEntity> ctKhuyenMais;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "goiTap")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "goiTap")
     private List<CtBaiTapEntity> ctBaiTaps;
 }
