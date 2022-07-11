@@ -25,8 +25,8 @@ public class KhachHangController {
     }
 
     @GetMapping("/dskh")
-    public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@RequestParam(value = "maLoaiKH") String maLoaiKH) {
-            return khachHangService.layDSKhachHangTheoLoaiKH(maLoaiKH);
+    public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@RequestParam(value = "idLoaiKH") Integer idLoaiKH) {
+            return khachHangService.layDSKhachHangTheoLoaiKH(idLoaiKH);
     }
 
     @GetMapping("/kh")

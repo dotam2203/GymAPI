@@ -34,8 +34,8 @@ public class LoaiKHController {
         return loaiKHService.suaLoaiKH(loaiKhachHangDTO);
     }
 
-    @DeleteMapping("/{maLoaiKH}")
-    public void xoaLoaiKH(@PathVariable String maLoaiKH) {
-        loaiKHService.xoaLoaiKH(maLoaiKH);
+    @DeleteMapping("/{idLoaiKH}")
+    public void xoaLoaiKH(@PathVariable Integer idLoaiKH) {
+        loaiKHService.xoaLoaiKH(idLoaiKH);
     }
 }

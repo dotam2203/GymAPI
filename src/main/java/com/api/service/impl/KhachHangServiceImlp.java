@@ -30,8 +30,8 @@ public class KhachHangServiceImlp implements KhachHangService {
     }
 
     @Override
-    public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(String maLoaiKH) {
-        List<KhachHangEntity> dsKhachHangTheoLoaiKH = khachHangRepository.findByLoaiKH_MaLoaiKH(maLoaiKH);
+    public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(Integer idLoaiKH) {
+        List<KhachHangEntity> dsKhachHangTheoLoaiKH = khachHangRepository.findByLoaiKH_IDLoaiKH(idLoaiKH);
         return dsKhachHangTheoLoaiKH.stream().map(KhachHangDTO::new).collect(Collectors.toList());
     }
 
@@ -43,7 +43,7 @@ public class KhachHangServiceImlp implements KhachHangService {
 
     @Override
     public KhachHangDTO themKhachHang(KhachHangDTO khachHangDTO) {
-        LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(khachHangDTO.getMaLoaiKH());
+        LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(khachHangDTO.getIdLoaiKH());
         KhachHangEntity khachHang = khachHangDTO.toEntity();
         khachHang.setLoaiKH(loaiKH);
         return new KhachHangDTO(khachHangRepository.save(khachHang));
@@ -52,7 +52,7 @@ public class KhachHangServiceImlp implements KhachHangService {
     @Override
     public KhachHangDTO suaKhachHang(KhachHangDTO khachHangDTO) {
         KhachHangEntity khachHang = khachHangRepository.getById(khachHangDTO.getMaKH());
-        LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(khachHangDTO.getMaLoaiKH());
+        LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(khachHangDTO.getIdLoaiKH());
         khachHang.setHoTen(khachHangDTO.getHoTen());
         khachHang.setEmail(khachHangDTO.getEmail());
         khachHang.setSdt(khachHangDTO.getSdt());

@@ -18,19 +18,19 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoaiKhachHangDTO {
-    private String maLoaiKH;
+    private Integer idLoaiKH;
     private String tenLoaiKH;
     private List<KhachHangDTO> khachHangs;
 
     public LoaiKhachHangDTO(LoaiKhachHangEntity loaiKH) {
-        this.maLoaiKH = loaiKH.getMaLoaiKH();
+        this.idLoaiKH = loaiKH.getIdLoaiKH();
         this.tenLoaiKH = loaiKH.getTenLoaiKH();
         this.khachHangs = loaiKH.getKhachHangs().stream().map(KhachHangDTO::new).collect(Collectors.toList());
     }
 
     public LoaiKhachHangEntity toEntity(){
         LoaiKhachHangEntity loaiKH = new LoaiKhachHangEntity();
-        loaiKH.setMaLoaiKH(this.maLoaiKH);
+        loaiKH.setIdLoaiKH(this.idLoaiKH);
         loaiKH.setTenLoaiKH(this.tenLoaiKH);
         return loaiKH;
     }

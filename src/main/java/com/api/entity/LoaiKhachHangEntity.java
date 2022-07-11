@@ -20,9 +20,10 @@ import java.util.List;
 @Table(name = "LOAIKHACHHANG")
 public class LoaiKhachHangEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "MaLoaiKH")
-    private String maLoaiKH;
+    @Column(name = "IDLoaiKH")
+    private Integer idLoaiKH;
 
     @Basic(optional = false)
     @Column(name = "TenLoaiKH")

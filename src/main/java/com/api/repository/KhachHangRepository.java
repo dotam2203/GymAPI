@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface KhachHangRepository extends JpaRepository<KhachHangEntity,String> {
-    List<KhachHangEntity> findByLoaiKH_MaLoaiKH(String maLoaiKH);
+    List<KhachHangEntity> findByLoaiKH_IDLoaiKH(Integer idLoaiKH);
 }

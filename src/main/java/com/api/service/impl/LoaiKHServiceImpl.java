@@ -31,14 +31,14 @@ public class LoaiKHServiceImpl implements LoaiKHService {
 
     @Override
     public LoaiKhachHangDTO suaLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO) {
-        LoaiKhachHangEntity loaiKhachHang = loaiKHRepository.getById(loaiKhachHangDTO.getMaLoaiKH());
-        loaiKhachHang.setMaLoaiKH(loaiKhachHangDTO.getMaLoaiKH());
+        LoaiKhachHangEntity loaiKhachHang = loaiKHRepository.getById(loaiKhachHangDTO.getIdLoaiKH());
+        loaiKhachHang.setIdLoaiKH(loaiKhachHangDTO.getIdLoaiKH());
         loaiKhachHang.setTenLoaiKH(loaiKhachHangDTO.getTenLoaiKH());
         return new LoaiKhachHangDTO(loaiKHRepository.save(loaiKhachHangDTO.toEntity()));
     }
 
     @Override
-    public void xoaLoaiKH(String maLoaiKH) {
-        loaiKHRepository.deleteById(maLoaiKH);
+    public void xoaLoaiKH(Integer idLoaiKH) {
+        loaiKHRepository.deleteById(idLoaiKH);
     }
 }

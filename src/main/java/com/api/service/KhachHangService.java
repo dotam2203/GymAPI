@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface KhachHangService {
     List<KhachHangDTO> layDSKhachHang();
-    List<KhachHangDTO> layDSKhachHangTheoLoaiKH(String maLoaiKH);
+    List<KhachHangDTO> layDSKhachHangTheoLoaiKH(Integer idLoaiKH);
     KhachHangDTO layKhachHang(String maKH);
     KhachHangDTO themKhachHang(KhachHangDTO khachHangDTO);
     KhachHangDTO suaKhachHang(KhachHangDTO khachHangDTO);

@@ -25,7 +25,7 @@ public class KhachHangDTO {
     private String phai;
     private String diaChi;
     private String hinhAnh;
-    private String maLoaiKH;
+    private Integer idLoaiKH;
     private List<TheTapDTO> theTaps;
 
     public KhachHangDTO(KhachHangEntity khachHang) {
@@ -36,7 +36,7 @@ public class KhachHangDTO {
         this.phai = khachHang.getPhai();
         this.diaChi = khachHang.getDiaChi();
         this.hinhAnh = khachHang.getHinhAnh();
-        this.maLoaiKH = khachHang.getLoaiKH().getMaLoaiKH();
+        this.idLoaiKH = khachHang.getLoaiKH().getIdLoaiKH();
         this.theTaps = khachHang.getTheTaps().stream().map(TheTapDTO::new).collect(Collectors.toList());
     }
 

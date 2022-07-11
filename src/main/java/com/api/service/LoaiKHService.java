@@ -12,5 +12,5 @@ public interface LoaiKHService {
     List<LoaiKhachHangDTO> layDSLoaiKH();
     LoaiKhachHangDTO themLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO);
     LoaiKhachHangDTO suaLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO);
-    void xoaLoaiKH(String maLoaiKH);
+    void xoaLoaiKH(Integer idLoaiKH);
 }
