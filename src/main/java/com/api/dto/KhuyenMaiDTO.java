@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class KhuyenMaiDTO {
-    private String maKM;
+    private Integer idKM;
     private String moTa;
     private Date ngayBD;
     private Date ngayKT;
@@ -27,7 +27,7 @@ public class KhuyenMaiDTO {
     private List<CtKhuyenMaiDTO> ctKhuyenMais;
 
     public KhuyenMaiDTO(KhuyenMaiEntity khuyenMai) {
-        this.maKM = khuyenMai.getMaKM();
+        this.idKM = khuyenMai.getIdKM();
         this.moTa = khuyenMai.getMoTa();
         this.ngayBD = khuyenMai.getNgayBD();
         this.ngayKT = khuyenMai.getNgayKT();
@@ -37,7 +37,7 @@ public class KhuyenMaiDTO {
 
     public KhuyenMaiEntity toEntity(){
         KhuyenMaiEntity khuyenMai = new KhuyenMaiEntity();
-        khuyenMai.setMaKM(this.maKM);
+        khuyenMai.setIdKM(this.idKM);
         khuyenMai.setMoTa(this.moTa);
         khuyenMai.setNgayBD(this.ngayBD);
         khuyenMai.setNgayKT(this.ngayKT);

@@ -24,9 +24,8 @@ import java.util.List;
 public class KhuyenMaiEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaKM")
-    @Nationalized
-    private String maKM;
+    @Column(name = "IDKM")
+    private Integer idKM;
 
     @Basic(optional = false)
     @Column(name = "MoTa")

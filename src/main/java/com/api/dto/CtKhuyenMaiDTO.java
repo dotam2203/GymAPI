@@ -17,13 +17,13 @@ import lombok.Setter;
 public class CtKhuyenMaiDTO {
     private Integer idCTKM;
     private Float phanTramGiam;
-    private String maKM;
+    private Integer idKM;
     private String maGoiTap;
 
     public CtKhuyenMaiDTO(CtKhuyenMaiEntity ctKhuyenMai) {
         this.idCTKM = ctKhuyenMai.getIdCTKM();
         this.phanTramGiam = ctKhuyenMai.getPhanTramGiam();
-        this.maKM = ctKhuyenMai.getKhuyenMai().getMaKM();
+        this.idKM = ctKhuyenMai.getKhuyenMai().getIdKM();
         this.maGoiTap = ctKhuyenMai.getGoiTap().getMaGoiTap();
     }
 

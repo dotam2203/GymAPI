@@ -28,7 +28,7 @@ public class CtKhuyenMaiEntity {
     @Column(name = "PhanTramGiamGia")
     private Float phanTramGiam;
 
-    @JoinColumn(name = "MaKM")
+    @JoinColumn(name = "IDKM")
     @ManyToOne
     @Basic(optional = false)
     private KhuyenMaiEntity khuyenMai;
