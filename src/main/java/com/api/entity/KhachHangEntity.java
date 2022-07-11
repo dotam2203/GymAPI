@@ -54,7 +54,7 @@ public class KhachHangEntity {
     @Column(name = "HinhAnh")
     private String hinhAnh;
 
-    @JoinColumn(name = "IDLoaiKH")
+    @JoinColumn(name = "idLoaiKH")
     @ManyToOne
     @Basic(optional = false)
     private LoaiKhachHangEntity loaiKH;
