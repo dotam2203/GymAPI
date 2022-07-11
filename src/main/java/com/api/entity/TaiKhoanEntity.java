@@ -19,6 +19,7 @@ import javax.persistence.*;
 @Table(name = "TAIKHOAN")
 public class TaiKhoanEntity {
     @Id
+    @Basic(optional = false)
     @Column(name = "MaTK")
     private String maTK;
 

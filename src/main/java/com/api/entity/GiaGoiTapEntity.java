@@ -23,6 +23,7 @@ import java.util.Date;
 public class GiaGoiTapEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
     @Column(name = "IDGiaGT")
     private Integer idGia;
 
