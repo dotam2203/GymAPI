@@ -23,6 +23,7 @@ import java.util.List;
 @Table(name = "KHUYENMAI")
 public class KhuyenMaiEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "IDKM")
     private Integer idKM;

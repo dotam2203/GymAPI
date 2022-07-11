@@ -21,6 +21,7 @@ import java.util.List;
 @Table(name = "BAITAP")
 public class BaiTapEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "IDBT")
     private Integer idBT;

@@ -22,8 +22,8 @@ import java.util.Date;
 @Table(name = "GIAGOITAP")
 public class GiaGoiTapEntity {
     @Id
-    @Column(name = "IDGiaGT")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IDGiaGT")
     private Integer idGia;
 
     @Column(name = "NgayApDung")
