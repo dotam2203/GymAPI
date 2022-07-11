@@ -35,7 +35,7 @@ public class BaiTapServiceImpl implements BaiTapService {
     @Override
     public BaiTapDTO suaBaiTap(BaiTapDTO baiTapDTO) {
         if(baiTapDTO != null){
-            BaiTapEntity baiTap = baiTapRepository.getById(baiTapDTO.getMaBT());
+            BaiTapEntity baiTap = baiTapRepository.getById(baiTapDTO.getIdBT());
             baiTap.setTenBT(baiTapDTO.getTenBT());
             baiTap.setMoTa(baiTapDTO.getMoTa());
             baiTap.setDuongDan(baiTapDTO.getDuongDan());
@@ -45,9 +45,9 @@ public class BaiTapServiceImpl implements BaiTapService {
     }
 
     @Override
-    public void xoaBaiTap(String maBT) {
-        if(maBT != null){
-            baiTapRepository.deleteById(maBT);
+    public void xoaBaiTap(Integer idBT) {
+        if(idBT != 0){
+            baiTapRepository.deleteById(idBT);
         }
     }
 }

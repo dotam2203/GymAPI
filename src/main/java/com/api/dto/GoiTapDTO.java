@@ -22,7 +22,7 @@ public class GoiTapDTO {
     private String tenGoiTap;
     private String moTa;
     private String trangThai;
-    private String maLoaiGT;
+    private Integer idLoaiGT;
     private List<GiaGoiTapDTO> giaGoiTaps;
     private List<CtTheTapDTO> ctTheTaps;
     private List<CtKhuyenMaiDTO> ctKhuyenMais;
@@ -33,7 +33,7 @@ public class GoiTapDTO {
         this.tenGoiTap = goiTap.getTenGoiTap();
         this.moTa = goiTap.getMoTa();
         this.trangThai = goiTap.getTrangThai();
-        this.maLoaiGT = goiTap.getLoaiGT().getMaLoaiGT();
+        this.idLoaiGT = goiTap.getLoaiGT().getIdLoaiGT();
         this.giaGoiTaps = goiTap.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
         this.ctTheTaps = goiTap.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
         this.ctKhuyenMais = goiTap.getCtKhuyenMais().stream().map(CtKhuyenMaiDTO::new).collect(Collectors.toList());

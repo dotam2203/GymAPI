@@ -25,8 +25,8 @@ public class GoiTapController {
     }
 
     @GetMapping("/dsgt")
-    public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@RequestParam(value = "maLoaiGT") String maLoaiGT) {
-        return goiTapService.layDSGoiTapTheoLoaiGT(maLoaiGT);
+    public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
+        return goiTapService.layDSGoiTapTheoLoaiGT(idLoaiGT);
     }
 
     @GetMapping("/gt")

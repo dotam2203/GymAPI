@@ -31,7 +31,7 @@ public class KhachHangServiceImlp implements KhachHangService {
 
     @Override
     public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(Integer idLoaiKH) {
-        List<KhachHangEntity> dsKhachHangTheoLoaiKH = khachHangRepository.findByLoaiKH_IDLoaiKH(idLoaiKH);
+        List<KhachHangEntity> dsKhachHangTheoLoaiKH = khachHangRepository.findByLoaiKH_IdLoaiKH(idLoaiKH);
         return dsKhachHangTheoLoaiKH.stream().map(KhachHangDTO::new).collect(Collectors.toList());
     }
 

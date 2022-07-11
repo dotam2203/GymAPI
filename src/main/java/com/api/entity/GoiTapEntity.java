@@ -39,7 +39,7 @@ public class GoiTapEntity {
     @Nationalized
     private String trangThai;
 
-    @JoinColumn(name = "MaLoaiGT")
+    @JoinColumn(name = "IdLoaiGT")
     @ManyToOne
     @Basic(optional = false)
     private LoaiGoiTapEntity loaiGT;

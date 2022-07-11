@@ -24,7 +24,7 @@ public class CtBaiTapEntity {
     @Column(name = "IdCTBT")
     private Integer idCTBT;
 
-    @JoinColumn(name = "MaBaiTap")
+    @JoinColumn(name = "IDBT")
     @ManyToOne
     @Basic(optional = false)
     private BaiTapEntity baiTap;

@@ -22,9 +22,8 @@ import java.util.List;
 public class LoaiGoiTapEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaLoaiGT")
-    @Nationalized
-    private String maLoaiGT;
+    @Column(name = "IDLoaiGT")
+    private Integer idLoaiGT;
 
     @Basic(optional = false)
     @Column(name = "TenLoaiGT")

@@ -18,13 +18,13 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoaiGoiTapDTO {
-    private String maLoaiGT;
+    private Integer idLoaiGT;
     private String tenLoaiGT;
     private String trangThai;
     private List<GoiTapDTO> goiTaps;
 
     public LoaiGoiTapDTO(LoaiGoiTapEntity loaiGoiTap) {
-        this.maLoaiGT = loaiGoiTap.getMaLoaiGT();
+        this.idLoaiGT = loaiGoiTap.getIdLoaiGT();
         this.tenLoaiGT = loaiGoiTap.getTenLoaiGT();
         this.trangThai = loaiGoiTap.getTrangThai();
         this.goiTaps = loaiGoiTap.getGoiTaps().stream().map(GoiTapDTO::new).collect(Collectors.toList());
@@ -32,7 +32,7 @@ public class LoaiGoiTapDTO {
 
     public LoaiGoiTapEntity toEntity(){
         LoaiGoiTapEntity loaiGoiTap = new LoaiGoiTapEntity();
-        loaiGoiTap.setMaLoaiGT(this.maLoaiGT);
+        loaiGoiTap.setIdLoaiGT(this.idLoaiGT);
         loaiGoiTap.setTenLoaiGT(this.tenLoaiGT);
         loaiGoiTap.setTrangThai(this.trangThai);
         return loaiGoiTap;

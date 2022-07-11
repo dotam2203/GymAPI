@@ -18,14 +18,14 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaiTapDTO {
-    private String maBT;
+    private Integer idBT;
     private String tenBT;
     private String moTa;
     private String duongDan;
     private List<CtBaiTapDTO> ctBaiTaps;
 
     public BaiTapDTO(BaiTapEntity baiTap) {
-        this.maBT = baiTap.getMaBT();
+        this.idBT = baiTap.getIdBT();
         this.tenBT = baiTap.getTenBT();
         this.moTa = baiTap.getMoTa();
         this.duongDan = baiTap.getDuongDan();
@@ -34,7 +34,7 @@ public class BaiTapDTO {
 
     public BaiTapEntity toEntity(){
         BaiTapEntity baiTap = new BaiTapEntity();
-        baiTap.setMaBT(this.maBT);
+        baiTap.setIdBT(this.idBT);
         baiTap.setTenBT(this.tenBT);
         baiTap.setMoTa(this.moTa);
         baiTap.setDuongDan(this.duongDan);

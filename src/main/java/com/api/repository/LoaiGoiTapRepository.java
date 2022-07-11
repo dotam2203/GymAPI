@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * Date:  03/07/2022
  */
 @Repository
-public interface LoaiGoiTapRepository extends JpaRepository<LoaiGoiTapEntity,String> {
+public interface LoaiGoiTapRepository extends JpaRepository<LoaiGoiTapEntity,Integer> {
 }

@@ -16,12 +16,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CtBaiTapDTO {
     private Integer idCTBT;
-    private String maBaiTap;
+    private Integer idBT;
     private String maGoiTap;
 
     public CtBaiTapDTO(CtBaiTapEntity ctBaiTap) {
         this.idCTBT = ctBaiTap.getIdCTBT();
-        this.maBaiTap = ctBaiTap.getBaiTap().getMaBT();
+        this.idBT = ctBaiTap.getBaiTap().getIdBT();
         this.maGoiTap = ctBaiTap.getGoiTap().getMaGoiTap();
     }
 

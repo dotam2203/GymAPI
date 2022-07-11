@@ -34,8 +34,8 @@ public class BaiTapController {
         return baiTapService.suaBaiTap(baiTapDTO);
     }
 
-    @DeleteMapping("/{maBT}")
-    public void xoaBaiTap(@PathVariable String maBT) {
-        baiTapService.xoaBaiTap(maBT);
+    @DeleteMapping("/{idBT}")
+    public void xoaBaiTap(@PathVariable Integer idBT) {
+        baiTapService.xoaBaiTap(idBT);
     }
 }

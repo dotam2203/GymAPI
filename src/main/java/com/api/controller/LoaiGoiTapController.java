@@ -34,8 +34,8 @@ public class LoaiGoiTapController {
         return loaiGoiTapService.suaLoaiGoiTap(loaiGoiTapDTO);
     }
 
-    @DeleteMapping("/{maLoaiGT}")
-    public void xoaLoaiGoiTap(@PathVariable String maLoaiGT) {
-        loaiGoiTapService.xoaLoaiGoiTap(maLoaiGT);
+    @DeleteMapping("/{idLoaiGT}")
+    public void xoaLoaiGoiTap(@PathVariable Integer idLoaiGT) {
+        loaiGoiTapService.xoaLoaiGoiTap(idLoaiGT);
     }
 }

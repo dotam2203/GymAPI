@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * Date:  06/07/2022
  */
 @Repository
-public interface BaiTapRepository extends JpaRepository<BaiTapEntity,String> {
+public interface BaiTapRepository extends JpaRepository<BaiTapEntity,Integer> {
 }

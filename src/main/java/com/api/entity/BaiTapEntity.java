@@ -22,9 +22,8 @@ import java.util.List;
 public class BaiTapEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaBT")
-    @Nationalized
-    private String maBT;
+    @Column(name = "IDBT")
+    private Integer idBT;
 
     @Basic(optional = false)
     @Column(name = "TenBT")

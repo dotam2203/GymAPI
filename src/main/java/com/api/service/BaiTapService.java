@@ -12,5 +12,5 @@ public interface BaiTapService {
     List<BaiTapDTO> layDSBaiTap();
     BaiTapDTO themBaiTap(BaiTapDTO baiTapDTO);
     BaiTapDTO suaBaiTap(BaiTapDTO baiTapDTO);
-    void xoaBaiTap(String maBT);
+    void xoaBaiTap(Integer idBT);
 }

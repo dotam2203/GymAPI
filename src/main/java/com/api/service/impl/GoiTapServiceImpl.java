@@ -30,8 +30,8 @@ public class GoiTapServiceImpl implements GoiTapService {
     }
 
     @Override
-    public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(String maLoaiGT) {
-        List<GoiTapEntity> dsGoiTapTheoLoaiGT = goiTapRepository.findByLoaiGT_MaLoaiGT(maLoaiGT);
+    public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(Integer idLoaiGT) {
+        List<GoiTapEntity> dsGoiTapTheoLoaiGT = goiTapRepository.findByLoaiGT_IdLoaiGT(idLoaiGT);
         return dsGoiTapTheoLoaiGT.stream().map(GoiTapDTO::new).collect(Collectors.toList());
     }
 
@@ -43,7 +43,7 @@ public class GoiTapServiceImpl implements GoiTapService {
 
     @Override
     public GoiTapDTO themGoiTap(GoiTapDTO goiTapDTO) {
-        LoaiGoiTapEntity loaiGT = loaiGTRepository.getById(goiTapDTO.getMaLoaiGT());
+        LoaiGoiTapEntity loaiGT = loaiGTRepository.getById(goiTapDTO.getIdLoaiGT());
         GoiTapEntity goiTap = goiTapDTO.toEntity();
         goiTap.setLoaiGT(loaiGT);
         return new GoiTapDTO(goiTapRepository.save(goiTap));
@@ -51,7 +51,7 @@ public class GoiTapServiceImpl implements GoiTapService {
 
     @Override
     public GoiTapDTO suaGoiTap(GoiTapDTO goiTapDTO) {
-        LoaiGoiTapEntity loaiGT = loaiGTRepository.getById(goiTapDTO.getMaLoaiGT());
+        LoaiGoiTapEntity loaiGT = loaiGTRepository.getById(goiTapDTO.getIdLoaiGT());
         GoiTapEntity goiTap = goiTapRepository.getById(goiTapDTO.getMaGoiTap());
         goiTap.setTenGoiTap(goiTapDTO.getTenGoiTap());
         goiTap.setMoTa(goiTapDTO.getMoTa());
