@@ -25,7 +25,7 @@ public class LoaiKHController {
     }
 
     @GetMapping("/lkh") // api/loaikh?idLoaiKH=1
-    public LoaiKhachHangDTO layKhachHang(@RequestParam(name = "idLoaiKH") Integer idLoaiKH){
+    public LoaiKhachHangDTO layKhachHang(@RequestParam(value = "idLoaiKH") Integer idLoaiKH){
         return loaiKHService.layLoaiKH(idLoaiKH);
     }
 
