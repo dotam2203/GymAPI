@@ -25,7 +25,6 @@ public class NhanVienDTO {
     private String phai;
     private String diaChi;
     private String hinhAnh;
-    private String maTK;
     private List<GiaGoiTapDTO> giaGoiTaps;
     private List<KhuyenMaiDTO> khuyenMais;
     private List<HoaDonDTO> hoaDons;
@@ -38,7 +37,6 @@ public class NhanVienDTO {
         this.phai = nhanVien.getPhai();
         this.diaChi = nhanVien.getDiaChi();
         this.hinhAnh = nhanVien.getHinhAnh();
-        this.maTK = nhanVien.getTaiKhoan().getMaTK();
         this.giaGoiTaps = nhanVien.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
     }
 

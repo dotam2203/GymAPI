@@ -54,9 +54,8 @@ public class NhanVienEntity {
     @Nationalized
     private String hinhAnh;
 
-    @JoinColumn(name = "MaTK", unique = true)
-    @OneToOne
-    @Basic(optional = false)
+
+    @OneToOne(cascade = CascadeType.REFRESH, mappedBy = "nhanVien")
     private TaiKhoanEntity taiKhoan;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "nhanVien")

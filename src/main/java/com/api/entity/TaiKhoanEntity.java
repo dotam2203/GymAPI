@@ -36,6 +36,8 @@ public class TaiKhoanEntity {
     @Basic(optional = false)
     private PhanQuyenEntity phanQuyen;
 
-    @OneToOne(cascade = CascadeType.REFRESH, mappedBy = "taiKhoan")
+    @JoinColumn(name = "MaNV", unique = true)
+    @OneToOne
+    @Basic(optional = false)
     private NhanVienEntity nhanVien;
 }
