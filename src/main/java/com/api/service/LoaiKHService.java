@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface LoaiKHService {
     List<LoaiKhachHangDTO> layDSLoaiKH();
+    LoaiKhachHangDTO layLoaiKH(Integer idLoaiKH);
     LoaiKhachHangDTO themLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO);
     LoaiKhachHangDTO suaLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO);
     void xoaLoaiKH(Integer idLoaiKH);

@@ -26,6 +26,12 @@ public class LoaiGoiTapServiceImpl implements LoaiGoiTapService {
     }
 
     @Override
+    public LoaiGoiTapDTO layLoaiGoiTap(Integer idLoaiGT) {
+        LoaiGoiTapEntity loaiGT = loaiGoiTapRepository.getById(idLoaiGT);
+        return new LoaiGoiTapDTO(loaiGT);
+    }
+
+    @Override
     public LoaiGoiTapDTO themLoaiGoiTap(LoaiGoiTapDTO loaiGoitapDTO) {
         return new LoaiGoiTapDTO(loaiGoiTapRepository.save(loaiGoitapDTO.toEntity()));
     }

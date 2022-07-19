@@ -25,6 +25,12 @@ public class LoaiKHServiceImpl implements LoaiKHService {
     }
 
     @Override
+    public LoaiKhachHangDTO layLoaiKH(Integer idLoaiKH) {
+        LoaiKhachHangEntity loaiKH = loaiKHRepository.getById(idLoaiKH);
+        return new LoaiKhachHangDTO(loaiKH);
+    }
+
+    @Override
     public LoaiKhachHangDTO themLoaiKH(LoaiKhachHangDTO loaiKhachHangDTO) {
         return new LoaiKhachHangDTO(loaiKHRepository.save(loaiKhachHangDTO.toEntity()));
     }
@@ -34,7 +40,8 @@ public class LoaiKHServiceImpl implements LoaiKHService {
         LoaiKhachHangEntity loaiKhachHang = loaiKHRepository.getById(loaiKhachHangDTO.getIdLoaiKH());
         loaiKhachHang.setIdLoaiKH(loaiKhachHangDTO.getIdLoaiKH());
         loaiKhachHang.setTenLoaiKH(loaiKhachHangDTO.getTenLoaiKH());
-        return new LoaiKhachHangDTO(loaiKHRepository.save(loaiKhachHangDTO.toEntity()));
+        LoaiKhachHangEntity save = loaiKHRepository.save(loaiKhachHangDTO.toEntity());
+        return new LoaiKhachHangDTO(save);
     }
 
     @Override

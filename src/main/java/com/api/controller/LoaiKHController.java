@@ -24,6 +24,11 @@ public class LoaiKHController {
         return loaiKHService.layDSLoaiKH();
     }
 
+    @GetMapping("/lkh")
+    public LoaiKhachHangDTO layKhachHang(@PathVariable(name = "idLoaiKH") Integer idLoaiKH){
+        return loaiKHService.layLoaiKH(idLoaiKH);
+    }
+
     @PostMapping("")
     public LoaiKhachHangDTO themLoaiKH(@Valid @RequestBody LoaiKhachHangDTO loaiKhachHangDTO) {
         return loaiKHService.themLoaiKH(loaiKhachHangDTO);

@@ -23,6 +23,10 @@ public class LoaiGoiTapController {
     public List<LoaiGoiTapDTO> layDSLoaiGoiTap() {
         return loaiGoiTapService.layDSLoaiGoiTap();
     }
+    @GetMapping("/lgt")
+    public LoaiGoiTapDTO layLoaiGoiTap(@PathVariable(name = "idLoaiKH") Integer idLoaiKH) {
+        return loaiGoiTapService.layLoaiGoiTap(idLoaiKH);
+    }
 
     @PostMapping("")
     public LoaiGoiTapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
