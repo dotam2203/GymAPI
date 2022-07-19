@@ -24,8 +24,8 @@ public class LoaiKHController {
         return loaiKHService.layDSLoaiKH();
     }
 
-    @GetMapping("/lkh")
-    public LoaiKhachHangDTO layKhachHang(@PathVariable(name = "idLoaiKH") Integer idLoaiKH){
+    @GetMapping("/lkh") // api/loaikh?idLoaiKH=1
+    public LoaiKhachHangDTO layKhachHang(@RequestParam(name = "idLoaiKH") Integer idLoaiKH){
         return loaiKHService.layLoaiKH(idLoaiKH);
     }
 

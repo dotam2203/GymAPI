@@ -24,7 +24,7 @@ public class LoaiGoiTapController {
         return loaiGoiTapService.layDSLoaiGoiTap();
     }
     @GetMapping("/lgt")
-    public LoaiGoiTapDTO layLoaiGoiTap(@PathVariable(name = "idLoaiKH") Integer idLoaiKH) {
+    public LoaiGoiTapDTO layLoaiGoiTap(@RequestParam(name = "idLoaiKH") Integer idLoaiKH) {
         return loaiGoiTapService.layLoaiGoiTap(idLoaiKH);
     }
 
