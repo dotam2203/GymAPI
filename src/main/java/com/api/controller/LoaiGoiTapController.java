@@ -24,8 +24,8 @@ public class LoaiGoiTapController {
         return loaiGoiTapService.layDSLoaiGoiTap();
     }
     @GetMapping("/lgt")
-    public LoaiGoiTapDTO layLoaiGoiTap(@RequestParam(value = "idLoaiKH") Integer idLoaiKH) {
-        return loaiGoiTapService.layLoaiGoiTap(idLoaiKH);
+    public LoaiGoiTapDTO layLoaiGoiTap(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
+        return loaiGoiTapService.layLoaiGoiTap(idLoaiGT);
     }
 
     @PostMapping("")
