@@ -9,7 +9,6 @@ import java.util.List;
  * Author: tamdt35@fpt.com.vn
  * Date:  04/07/2022
  */
-@Service
 public interface PhanQuyenService {
     List<PhanQuyenDTO> layDSQuyen();
     PhanQuyenDTO layQuyen(String maQuyen);

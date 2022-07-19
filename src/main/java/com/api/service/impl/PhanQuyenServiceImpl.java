@@ -7,6 +7,7 @@ import com.api.entity.PhanQuyenEntity;
 import com.api.repository.PhanQuyenRepository;
 import com.api.service.PhanQuyenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
  * Author: tamdt35@fpt.com.vn
  * Date:  19/07/2022
  */
+@Service
 public class PhanQuyenServiceImpl implements PhanQuyenService {
     @Autowired
     PhanQuyenRepository phanQuyenRepository;
