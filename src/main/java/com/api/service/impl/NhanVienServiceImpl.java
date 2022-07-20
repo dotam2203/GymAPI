@@ -1,9 +1,6 @@
 package com.api.service.impl;
 
 import com.api.dto.NhanVienDTO;
-import com.api.dto.NhanVienDTO;
-import com.api.dto.NhanVienDTO;
-import com.api.entity.LoaiKhachHangEntity;
 import com.api.entity.NhanVienEntity;
 import com.api.repository.NhanVienRepository;
 import com.api.service.NhanVienService;

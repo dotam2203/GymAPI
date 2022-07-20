@@ -1,8 +1,6 @@
 package com.api.service.impl;
 
-import com.api.dto.LoaiKhachHangDTO;
 import com.api.dto.PhanQuyenDTO;
-import com.api.entity.PhanQuyenEntity;
 import com.api.entity.PhanQuyenEntity;
 import com.api.repository.PhanQuyenRepository;
 import com.api.service.PhanQuyenService;
@@ -25,18 +23,15 @@ public class PhanQuyenServiceImpl implements PhanQuyenService {
         List<PhanQuyenEntity> dsQuyen = phanQuyenRepository.findAll();
         return dsQuyen.stream().map(PhanQuyenDTO::new).collect(Collectors.toList());
     }
-
     @Override
     public PhanQuyenDTO layQuyen(String maQuyen) {
         PhanQuyenEntity phanQuyen = phanQuyenRepository.getById(maQuyen);
         return new PhanQuyenDTO(phanQuyen);
     }
-
     @Override
     public PhanQuyenDTO themQuyen(PhanQuyenDTO phanQuyenDTO) {
         return new PhanQuyenDTO(phanQuyenRepository.save(phanQuyenDTO.toEntity()));
     }
-
     @Override
     public PhanQuyenDTO suaQuyen(PhanQuyenDTO phanQuyenDTO) {
         PhanQuyenEntity phanQuyen = phanQuyenRepository.getById(phanQuyenDTO.getMaQuyen());

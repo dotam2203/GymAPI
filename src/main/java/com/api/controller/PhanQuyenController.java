@@ -24,7 +24,7 @@ public class PhanQuyenController {
         return phanQuyenService.layDSQuyen();
     }
 
-    @GetMapping("/loaiquyen") // api/loaiquyen?idQuyen=1
+    @GetMapping("/loaiquyen") // api/loaiquyen?maQuyen=1
     public PhanQuyenDTO layQuyen(@RequestParam(value = "maQuyen") String maQuyen){
         return phanQuyenService.layQuyen(maQuyen);
     }
