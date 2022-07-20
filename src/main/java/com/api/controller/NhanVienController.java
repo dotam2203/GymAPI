@@ -25,7 +25,7 @@ public class NhanVienController {
     }
 
     @GetMapping("/nv") // api/loaikh?maNV=1
-    public NhanVienDTO layKhachHang(@RequestParam(value = "maNV") String maNV){
+    public NhanVienDTO layNhanVien(@RequestParam(value = "maNV") String maNV){
         return nhanVienService.layNhanVien(maNV);
     }
 
