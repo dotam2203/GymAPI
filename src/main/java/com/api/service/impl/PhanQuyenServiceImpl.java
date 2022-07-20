@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 /**
  * Author: tamdt35@fpt.com.vn
- * Date:  19/07/2022
+ * Date:  04/07/2022
  */
 @Service
 public class PhanQuyenServiceImpl implements PhanQuyenService {
