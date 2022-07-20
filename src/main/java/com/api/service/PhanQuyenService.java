@@ -1,7 +1,6 @@
 package com.api.service;
 
 import com.api.dto.PhanQuyenDTO;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
