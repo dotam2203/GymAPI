@@ -13,7 +13,7 @@ import java.util.List;
  * Date:  19/07/2022
  */
 @RestController
-@RequestMapping("/phanquyen")
+@RequestMapping("/quyen")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class PhanQuyenController {
     @Autowired
