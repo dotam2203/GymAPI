@@ -25,8 +25,8 @@ public class TaiKhoanController {
     }
 
     @GetMapping("/dstk")
-    public List<TaiKhoanDTO> layDSTaiKhoanTheoQuyen(@RequestParam(value = "maTK") String maTK) {
-        return taiKhoanService.layDSTaiKhoanTheoQuyen(maTK);
+    public List<TaiKhoanDTO> layDSTaiKhoanTheoQuyen(@RequestParam(value = "maQuyen") String maQuyen) {
+        return taiKhoanService.layDSTaiKhoanTheoQuyen(maQuyen);
     }
 
     @GetMapping("/tk")

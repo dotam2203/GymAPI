@@ -4,6 +4,7 @@ import com.api.dto.GoiTapDTO;
 import com.api.dto.TaiKhoanDTO;
 import com.api.entity.*;
 import com.api.repository.NhanVienRepository;
+import com.api.repository.PhanQuyenRepository;
 import com.api.repository.TaiKhoanRepository;
 import com.api.service.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
     @Autowired
     TaiKhoanRepository taiKhoanRepository;
     @Autowired
-    TaiKhoanRepository phanQuyenRepository;
+    PhanQuyenRepository phanQuyenRepository;
     @Autowired
     NhanVienRepository nhanVienRepository;
 
@@ -45,22 +46,22 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
 
     @Override
     public TaiKhoanDTO themTaiKhoan(TaiKhoanDTO taiKhoanDTO) {
-        TaiKhoanEntity phanQuyen = phanQuyenRepository.getById(taiKhoanDTO.getMaQuyen());
+        PhanQuyenEntity phanQuyen = phanQuyenRepository.getById(taiKhoanDTO.getMaQuyen());
         NhanVienEntity nhanVien = nhanVienRepository.getById(taiKhoanDTO.getMaNV());
         TaiKhoanEntity taiKhoan = taiKhoanDTO.toEntity();
-        taiKhoan.setPhanQuyen(phanQuyen.getPhanQuyen());
+        taiKhoan.setPhanQuyen(phanQuyen);
         taiKhoan.setNhanVien(nhanVien);
         return new TaiKhoanDTO(taiKhoanRepository.save(taiKhoan));
     }
 
     @Override
     public TaiKhoanDTO suaTaiKhoan(TaiKhoanDTO taiKhoanDTO) {
-        TaiKhoanEntity phanQuyen = phanQuyenRepository.getById(taiKhoanDTO.getMaQuyen());
+        PhanQuyenEntity phanQuyen = phanQuyenRepository.getById(taiKhoanDTO.getMaQuyen());
         NhanVienEntity nhanVien = nhanVienRepository.getById(taiKhoanDTO.getMaNV());
         TaiKhoanEntity taiKhoan = taiKhoanRepository.getById(taiKhoanDTO.getMaTK());
         taiKhoan.setMatKhau(taiKhoanDTO.getMatKhau());
         taiKhoan.setTrangThai(taiKhoanDTO.getTrangThai());
-        taiKhoan.setPhanQuyen(phanQuyen.getPhanQuyen());
+        taiKhoan.setPhanQuyen(phanQuyen);
         taiKhoan.setNhanVien(nhanVien);
         TaiKhoanEntity save = taiKhoanRepository.save(taiKhoan);
         return new TaiKhoanDTO(save);
@@ -68,6 +69,6 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
 
     @Override
     public void xoaTaiKhoan(String maTK) {
-
+        taiKhoanRepository.deleteById(maTK);
     }
 }
