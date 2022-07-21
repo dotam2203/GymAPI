@@ -40,7 +40,7 @@ public class GiaGTServiceImpl implements GiaGTService {
 
     @Override
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(String maGT) {
-        List<GiaGoiTapEntity> dsGiaGT = giaRepository.findByNhanVien_MaNV(maGT);
+        List<GiaGoiTapEntity> dsGiaGT = giaRepository.findByGoiTap_MaGoiTap(maGT);
         return dsGiaGT.stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
     }
 

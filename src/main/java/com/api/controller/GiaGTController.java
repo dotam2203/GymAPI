@@ -22,7 +22,6 @@ public class GiaGTController {
     public List<GiaGoiTapDTO> layDSGia() {
         return giaGTService.layDSGia();
     }
-
     @GetMapping("/gt")
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(@RequestParam(value = "maGT") String maGT) {
         return giaGTService.layDSGiaTheoGoiTap(maGT);
