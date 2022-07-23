@@ -37,7 +37,8 @@ public class KhachHangDTO {
         this.diaChi = khachHang.getDiaChi();
         this.hinhAnh = khachHang.getHinhAnh();
         this.idLoaiKH = khachHang.getLoaiKH().getIdLoaiKH();
-        this.theTaps = khachHang.getTheTaps().stream().map(TheTapDTO::new).collect(Collectors.toList());
+        if(khachHang.getTheTaps() != null)
+            this.theTaps = khachHang.getTheTaps().stream().map(TheTapDTO::new).collect(Collectors.toList());
     }
 
     public KhachHangEntity toEntity(){

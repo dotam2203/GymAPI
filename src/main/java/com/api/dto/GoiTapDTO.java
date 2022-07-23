@@ -34,10 +34,14 @@ public class GoiTapDTO {
         this.moTa = goiTap.getMoTa();
         this.trangThai = goiTap.getTrangThai();
         this.idLoaiGT = goiTap.getLoaiGT().getIdLoaiGT();
-        this.giaGoiTaps = goiTap.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
-        this.ctTheTaps = goiTap.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
-        this.ctKhuyenMais = goiTap.getCtKhuyenMais().stream().map(CtKhuyenMaiDTO::new).collect(Collectors.toList());
-        this.ctBaiTaps = goiTap.getCtBaiTaps().stream().map(CtBaiTapDTO::new).collect(Collectors.toList());
+        if(goiTap.getGiaGoiTaps() != null)
+            this.giaGoiTaps = goiTap.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
+        if(goiTap.getCtTheTaps() != null)
+            this.ctTheTaps = goiTap.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+        if(goiTap.getCtKhuyenMais() != null)
+            this.ctKhuyenMais = goiTap.getCtKhuyenMais().stream().map(CtKhuyenMaiDTO::new).collect(Collectors.toList());
+        if(goiTap.getCtBaiTaps() != null)
+            this.ctBaiTaps = goiTap.getCtBaiTaps().stream().map(CtBaiTapDTO::new).collect(Collectors.toList());
     }
     public GoiTapEntity toEntity(){
         GoiTapEntity goiTap = new GoiTapEntity();

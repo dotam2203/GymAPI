@@ -28,7 +28,8 @@ public class HoaDonDTO {
     public HoaDonDTO(HoaDonEntity hoaDon) {
         this.maHD = hoaDon.getMaHD();
         this.ngayLap = hoaDon.getNgayLap();
-        this.ctTheTaps = hoaDon.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+        if(hoaDon.getCtTheTaps() != null)
+            this.ctTheTaps = hoaDon.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
         this.maNV = hoaDon.getNhanVien().getMaNV();
         this.maThe = hoaDon.getTheTap().getMaThe();
     }

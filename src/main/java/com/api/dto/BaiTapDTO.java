@@ -29,7 +29,8 @@ public class BaiTapDTO {
         this.tenBT = baiTap.getTenBT();
         this.moTa = baiTap.getMoTa();
         this.duongDan = baiTap.getDuongDan();
-        this.ctBaiTaps = baiTap.getCtBaiTaps().stream().map(CtBaiTapDTO::new).collect(Collectors.toList());
+        if(baiTap.getCtBaiTaps() != null)
+            this.ctBaiTaps = baiTap.getCtBaiTaps().stream().map(CtBaiTapDTO::new).collect(Collectors.toList());
     }
 
     public BaiTapEntity toEntity(){

@@ -32,7 +32,8 @@ public class KhuyenMaiDTO {
         this.ngayBD = khuyenMai.getNgayBD();
         this.ngayKT = khuyenMai.getNgayKT();
         this.nhanVien = khuyenMai.getNhanVien().getMaNV();
-        this.ctKhuyenMais = khuyenMai.getCtKhuyenMais().stream().map(CtKhuyenMaiDTO::new).collect(Collectors.toList());
+        if(khuyenMai.getCtKhuyenMais() != null)
+            this.ctKhuyenMais = khuyenMai.getCtKhuyenMais().stream().map(CtKhuyenMaiDTO::new).collect(Collectors.toList());
     }
 
     public KhuyenMaiEntity toEntity(){

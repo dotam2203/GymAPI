@@ -35,8 +35,10 @@ public class TheTapDTO {
         this.ngayKT = theTap.getNgayKT();
         this.trangThai = theTap.getTrangThai();
         this.maKH = theTap.getKhachHang().getMaKH();
-        this.ctTheTaps = theTap.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
-        this.hoaDons = theTap.getHoaDons().stream().map(HoaDonDTO::new).collect(Collectors.toList());
+        if(theTap.getCtTheTaps() != null)
+            this.ctTheTaps = theTap.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+        if(theTap.getHoaDons() != null)
+            this.hoaDons = theTap.getHoaDons().stream().map(HoaDonDTO::new).collect(Collectors.toList());
     }
 
     public TheTapEntity toEntity(){

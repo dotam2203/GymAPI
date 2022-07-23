@@ -25,7 +25,8 @@ public class LoaiKhachHangDTO {
     public LoaiKhachHangDTO(LoaiKhachHangEntity loaiKH) {
         this.idLoaiKH = loaiKH.getIdLoaiKH();
         this.tenLoaiKH = loaiKH.getTenLoaiKH();
-        this.khachHangs = loaiKH.getKhachHangs().stream().map(KhachHangDTO::new).collect(Collectors.toList());
+        if(loaiKH.getKhachHangs() != null)
+            this.khachHangs = loaiKH.getKhachHangs().stream().map(KhachHangDTO::new).collect(Collectors.toList());
     }
 
     public LoaiKhachHangEntity toEntity(){

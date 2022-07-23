@@ -25,7 +25,8 @@ public class PhanQuyenDTO {
     public PhanQuyenDTO(PhanQuyenEntity phanQuyen) {
         this.maQuyen = phanQuyen.getMaQuyen();
         this.tenQuyen = phanQuyen.getTenQuyen();
-        this.taiKhoans = phanQuyen.getTaiKhoans().stream().map(TaiKhoanDTO::new).collect(Collectors.toList());
+        if(phanQuyen.getTaiKhoans() != null)
+            this.taiKhoans = phanQuyen.getTaiKhoans().stream().map(TaiKhoanDTO::new).collect(Collectors.toList());
     }
 
     public PhanQuyenEntity toEntity(){

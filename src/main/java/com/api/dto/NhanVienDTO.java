@@ -37,7 +37,8 @@ public class NhanVienDTO {
         this.phai = nhanVien.getPhai();
         this.diaChi = nhanVien.getDiaChi();
         this.hinhAnh = nhanVien.getHinhAnh();
-        this.giaGoiTaps = nhanVien.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
+        if(nhanVien.getGiaGoiTaps() != null)
+             this.giaGoiTaps = nhanVien.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
     }
 
     public NhanVienEntity toEntity(){
