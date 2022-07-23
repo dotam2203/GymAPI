@@ -25,9 +25,9 @@ public class LoaiGoiTapDTO {
 
     public LoaiGoiTapDTO(LoaiGoiTapEntity loaiGoiTap) {
         this.idLoaiGT = loaiGoiTap.getIdLoaiGT();
-        if(loaiGoiTap.getTenLoaiGT().isEmpty())
+        if(loaiGoiTap.getTenLoaiGT() != null)
             this.tenLoaiGT = loaiGoiTap.getTenLoaiGT();
-        if(loaiGoiTap.getTrangThai().isEmpty())
+        if(loaiGoiTap.getTrangThai() != null)
             this.trangThai = loaiGoiTap.getTrangThai();
         this.goiTaps = loaiGoiTap.getGoiTaps().stream().map(GoiTapDTO::new).collect(Collectors.toList());
     }
