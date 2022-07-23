@@ -30,8 +30,8 @@ public class GoiTapController {
     }
 
     @GetMapping("/gt")
-    public GoiTapDTO layGoiTap(@RequestParam(value = "maGoiTap") String maGoiTap){
-        return goiTapService.layGoiTap(maGoiTap);
+    public GoiTapDTO layGoiTap(@RequestParam(value = "maGT") String maGT){
+        return goiTapService.layGoiTap(maGT);
     }
 
     @PostMapping("")
@@ -44,8 +44,8 @@ public class GoiTapController {
         return goiTapService.suaGoiTap(goiTapDTO);
     }
 
-    @DeleteMapping("/{maGoiTap}")
-    public void xoaGoiTap(@PathVariable String maGoiTap) {
-        goiTapService.xoaGoiTap(maGoiTap);
+    @DeleteMapping("/{maGT}")
+    public void xoaGoiTap(@PathVariable String maGT) {
+        goiTapService.xoaGoiTap(maGT);
     }
 }

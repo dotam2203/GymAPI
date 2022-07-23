@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GoiTapDTO {
-    private String maGoiTap;
-    private String tenGoiTap;
+    private String maGT;
+    private String tenGT;
     private String moTa;
     private String trangThai;
     private Integer idLoaiGT;
@@ -29,8 +29,8 @@ public class GoiTapDTO {
     private List<CtBaiTapDTO> ctBaiTaps;
 
     public GoiTapDTO(GoiTapEntity goiTap) {
-        this.maGoiTap = goiTap.getMaGoiTap();
-        this.tenGoiTap = goiTap.getTenGoiTap();
+        this.maGT = goiTap.getMaGT();
+        this.tenGT = goiTap.getTenGT();
         this.moTa = goiTap.getMoTa();
         this.trangThai = goiTap.getTrangThai();
         this.idLoaiGT = goiTap.getLoaiGT().getIdLoaiGT();
@@ -45,8 +45,8 @@ public class GoiTapDTO {
     }
     public GoiTapEntity toEntity(){
         GoiTapEntity goiTap = new GoiTapEntity();
-        goiTap.setMaGoiTap(this.maGoiTap);
-        goiTap.setTenGoiTap(this.tenGoiTap);
+        goiTap.setMaGT(this.maGT);
+        goiTap.setTenGT(this.tenGT);
         goiTap.setMoTa(this.moTa);
         goiTap.setTrangThai(this.trangThai);
         return goiTap;

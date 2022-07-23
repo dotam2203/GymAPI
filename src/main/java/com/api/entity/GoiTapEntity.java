@@ -22,13 +22,13 @@ import java.util.List;
 public class GoiTapEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaGoiTap")
-    private String maGoiTap;
+    @Column(name = "MaGT")
+    private String maGT;
 
     @Basic(optional = false)
-    @Column(name = "TenGoiTap")
+    @Column(name = "TenGT")
     @Nationalized
-    private String tenGoiTap;
+    private String tenGT;
 
     @Column(name = "MoTa")
     @Nationalized

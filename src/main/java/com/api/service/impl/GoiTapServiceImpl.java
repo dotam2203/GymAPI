@@ -52,8 +52,8 @@ public class GoiTapServiceImpl implements GoiTapService {
     @Override
     public GoiTapDTO suaGoiTap(GoiTapDTO goiTapDTO) {
         LoaiGoiTapEntity loaiGT = loaiGTRepository.getById(goiTapDTO.getIdLoaiGT());
-        GoiTapEntity goiTap = goiTapRepository.getById(goiTapDTO.getMaGoiTap());
-        goiTap.setTenGoiTap(goiTapDTO.getTenGoiTap());
+        GoiTapEntity goiTap = goiTapRepository.getById(goiTapDTO.getMaGT());
+        goiTap.setTenGT(goiTapDTO.getTenGT());
         goiTap.setMoTa(goiTapDTO.getMoTa());
         goiTap.setTrangThai(goiTapDTO.getTrangThai());
         goiTap.setLoaiGT(loaiGT);

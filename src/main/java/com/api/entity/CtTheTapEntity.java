@@ -30,7 +30,7 @@ public class CtTheTapEntity {
     @Nationalized
     private String donGia;
 
-    @JoinColumn(name = "MaGoiTap")
+    @JoinColumn(name = "MaGT")
     @ManyToOne
     @Basic(optional = false)
     private GoiTapEntity goiTap;

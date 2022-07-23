@@ -38,7 +38,7 @@ public class GiaGoiTapEntity {
     @Basic(optional = false)
     private String gia;
 
-    @JoinColumn(name = "MaGoiTap")
+    @JoinColumn(name = "MaGT")
     @ManyToOne
     @Basic(optional = false)
     private GoiTapEntity goiTap;

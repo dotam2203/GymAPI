@@ -33,7 +33,7 @@ public class CtKhuyenMaiEntity {
     @Basic(optional = false)
     private KhuyenMaiEntity khuyenMai;
 
-    @JoinColumn(name = "MaGoiTap")
+    @JoinColumn(name = "MaGT")
     @ManyToOne
     @Basic(optional = false)
     private GoiTapEntity goiTap;

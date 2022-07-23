@@ -20,14 +20,14 @@ public class GiaGoiTapDTO {
     private Integer idGia;
     private Date ngayApDung;
     private String gia;
-    private String maGoiTap;
+    private String maGT;
     private String maNV;
 
     public GiaGoiTapDTO(GiaGoiTapEntity giaGoiTap) {
         this.idGia = giaGoiTap.getIdGia();
         this.ngayApDung = giaGoiTap.getNgayApDung();
         this.gia = giaGoiTap.getGia();
-        this.maGoiTap = giaGoiTap.getGoiTap().getMaGoiTap();
+        this.maGT = giaGoiTap.getGoiTap().getMaGT();
         this.maNV = giaGoiTap.getNhanVien().getMaNV();
     }
 

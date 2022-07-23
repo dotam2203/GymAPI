@@ -40,7 +40,7 @@ public class GiaGTServiceImpl implements GiaGTService {
 
     @Override
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(String maGT) {
-        List<GiaGoiTapEntity> dsGiaGT = giaRepository.findByGoiTap_MaGoiTap(maGT);
+        List<GiaGoiTapEntity> dsGiaGT = giaRepository.findByGoiTap_MaGT(maGT);
         return dsGiaGT.stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
     }
 
@@ -58,7 +58,7 @@ public class GiaGTServiceImpl implements GiaGTService {
 
     @Override
     public GiaGoiTapDTO themGia(GiaGoiTapDTO giaGoiTapDTO) {
-        GoiTapEntity goiTap = goiTapRepository.getById(giaGoiTapDTO.getMaGoiTap());
+        GoiTapEntity goiTap = goiTapRepository.getById(giaGoiTapDTO.getMaGT());
         NhanVienEntity nhanVien = nhanVienRepository.getById(giaGoiTapDTO.getMaNV());
         GiaGoiTapEntity gia = giaGoiTapDTO.toEntity();
         gia.setGoiTap(goiTap);
@@ -68,7 +68,7 @@ public class GiaGTServiceImpl implements GiaGTService {
 
     @Override
     public GiaGoiTapDTO suaGia(GiaGoiTapDTO giaGoiTapDTO) {
-        GoiTapEntity goiTap = goiTapRepository.getById(giaGoiTapDTO.getMaGoiTap());
+        GoiTapEntity goiTap = goiTapRepository.getById(giaGoiTapDTO.getMaGT());
         NhanVienEntity nhanVien = nhanVienRepository.getById(giaGoiTapDTO.getMaNV());
         GiaGoiTapEntity gia = giaRepository.getById(giaGoiTapDTO.getIdGia());
         gia.setNgayApDung(gia.getNgayApDung());

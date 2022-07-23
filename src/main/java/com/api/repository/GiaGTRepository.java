@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Repository
 public interface GiaGTRepository extends JpaRepository<GiaGoiTapEntity,Integer> {
-    List<GiaGoiTapEntity> findByGoiTap_MaGoiTap(String maGT);
+    List<GiaGoiTapEntity> findByGoiTap_MaGT(String maGT);
     List<GiaGoiTapEntity> findByNhanVien_MaNV(String maNV);
     //List<GiaGoiTapEntity> findByNhanVien_MaGoiTap_MaNV(String maGT,String maNV);
 }

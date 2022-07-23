@@ -17,14 +17,14 @@ import lombok.Setter;
 public class CtTheTapDTO {
     private Integer idCTThe;
     private String donGia;
-    private String maGoiTap;
+    private String maGT;
     private String maHoaDon;
     private String maThe;
 
     public CtTheTapDTO(CtTheTapEntity ctTheTap) {
         this.idCTThe = ctTheTap.getIdCTThe();
         this.donGia = ctTheTap.getDonGia();
-        this.maGoiTap = ctTheTap.getGoiTap().getMaGoiTap();
+        this.maGT = ctTheTap.getGoiTap().getMaGT();
         this.maHoaDon = ctTheTap.getHoaDon().getMaHD();
         this.maThe = ctTheTap.getTheTap().getMaThe();
     }

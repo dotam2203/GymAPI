@@ -17,12 +17,12 @@ import lombok.Setter;
 public class CtBaiTapDTO {
     private Integer idCTBT;
     private Integer idBT;
-    private String maGoiTap;
+    private String maGT;
 
     public CtBaiTapDTO(CtBaiTapEntity ctBaiTap) {
         this.idCTBT = ctBaiTap.getIdCTBT();
         this.idBT = ctBaiTap.getBaiTap().getIdBT();
-        this.maGoiTap = ctBaiTap.getGoiTap().getMaGoiTap();
+        this.maGT = ctBaiTap.getGoiTap().getMaGT();
     }
 
     public CtBaiTapEntity toEntity(){

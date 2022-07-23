@@ -18,13 +18,13 @@ public class CtKhuyenMaiDTO {
     private Integer idCTKM;
     private Float phanTramGiam;
     private Integer idKM;
-    private String maGoiTap;
+    private String maGT;
 
     public CtKhuyenMaiDTO(CtKhuyenMaiEntity ctKhuyenMai) {
         this.idCTKM = ctKhuyenMai.getIdCTKM();
         this.phanTramGiam = ctKhuyenMai.getPhanTramGiam();
         this.idKM = ctKhuyenMai.getKhuyenMai().getIdKM();
-        this.maGoiTap = ctKhuyenMai.getGoiTap().getMaGoiTap();
+        this.maGT = ctKhuyenMai.getGoiTap().getMaGT();
     }
 
     public CtKhuyenMaiEntity toEntity(){
