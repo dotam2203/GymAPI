@@ -36,8 +36,8 @@ public class GoiTapServiceImpl implements GoiTapService {
     }
 
     @Override
-    public GoiTapDTO layGoiTap(String maGoiTap) {
-        GoiTapEntity goiTap = goiTapRepository.getById(maGoiTap);
+    public GoiTapDTO layGoiTap(String maGT) {
+        GoiTapEntity goiTap = goiTapRepository.getById(maGT);
         return new GoiTapDTO(goiTap);
     }
 
@@ -62,7 +62,7 @@ public class GoiTapServiceImpl implements GoiTapService {
     }
 
     @Override
-    public void xoaGoiTap(String maGoiTap) {
-        goiTapRepository.deleteById(maGoiTap);
+    public void xoaGoiTap(String maGT) {
+        goiTapRepository.deleteById(maGT);
     }
 }
