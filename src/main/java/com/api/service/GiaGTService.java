@@ -12,7 +12,7 @@ public interface GiaGTService {
     List<GiaGoiTapDTO> layDSGia();
     List<GiaGoiTapDTO> layDSGiaTheoNhanVien(String maNV);
     List<GiaGoiTapDTO> layDSGiaTheoGoiTap(String maGT);
-    //List<GiaGoiTapDTO> layDSGiaTheoGoiTap_NhanVien(String maGT, String maNV);
+    List<GiaGoiTapDTO> layDSGiaTheoGoiTap_NhanVien(String maGT, String maNV);
     GiaGoiTapDTO layGia(Integer idGia);
     GiaGoiTapDTO themGia(GiaGoiTapDTO giaGoiTapDTO);
     GiaGoiTapDTO suaGia(GiaGoiTapDTO giaGoiTapDTO);

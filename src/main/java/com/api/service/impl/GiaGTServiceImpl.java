@@ -44,11 +44,11 @@ public class GiaGTServiceImpl implements GiaGTService {
         return dsGiaGT.stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
     }
 
-    /*@Override
+    @Override
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap_NhanVien(String maGT, String maNV) {
-        List<GiaGoiTapEntity> dsGiaGT_NV = giaRepository.findByNhanVien_MaGoiTap_MaNV(maGT,maNV);
-        return dsGiaGT_NV.stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
-    }*/
+        List<GiaGoiTapEntity> dsGiaGtNV = giaRepository.findGiaGoiTap(maGT, maNV);
+        return dsGiaGtNV.stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
+    }
 
     @Override
     public GiaGoiTapDTO layGia(Integer idGia) {
