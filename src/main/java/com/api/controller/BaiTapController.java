@@ -19,22 +19,22 @@ public class BaiTapController {
     @Autowired
     private BaiTapService baiTapService;
 
-    @GetMapping("")
+    @GetMapping("/get")
     public List<BaiTapDTO> layDSBaiTap() {
         return baiTapService.layDSBaiTap();
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public BaiTapDTO themBaiTap(@Valid @RequestBody BaiTapDTO baiTapDTO) {
         return baiTapService.themBaiTap(baiTapDTO);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public BaiTapDTO suaBaiTap(@Valid @RequestBody BaiTapDTO baiTapDTO) {
         return baiTapService.suaBaiTap(baiTapDTO);
     }
 
-    @DeleteMapping("/{idBT}")
+    @DeleteMapping("/delete/{idBT}")
     public void xoaBaiTap(@PathVariable Integer idBT) {
         baiTapService.xoaBaiTap(idBT);
     }

@@ -19,32 +19,32 @@ public class KhachHangController {
     @Autowired
     private KhachHangService khachHangService;
 
-    @GetMapping("")
+    @GetMapping("/get")
     public List<KhachHangDTO> layDSKhachHang() {
         return khachHangService.layDSKhachHang();
     }
 
-    @GetMapping("/dskh")
+    @GetMapping("/getds")
     public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@RequestParam(value = "idLoaiKH") Integer idLoaiKH) {
             return khachHangService.layDSKhachHangTheoLoaiKH(idLoaiKH);
     }
 
-    @GetMapping("/kh")
+    @GetMapping("/getkh")
     public KhachHangDTO layKhachHang(@RequestParam(value = "maKH") String maKH) {
         return khachHangService.layKhachHang(maKH);
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public KhachHangDTO themKhachHang(@Valid @RequestBody KhachHangDTO khachHangDTO) {
         return khachHangService.themKhachHang(khachHangDTO);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public KhachHangDTO suaKhachHang(@Valid @RequestBody KhachHangDTO khachHangDTO) {
         return khachHangService.suaKhachHang(khachHangDTO);
     }
 
-    @DeleteMapping("/{maKH}")
+    @DeleteMapping("/delete/{maKH}")
     public void xoaGoiTap(@PathVariable String maKH) {
         khachHangService.xoaKhachHang(maKH);
     }

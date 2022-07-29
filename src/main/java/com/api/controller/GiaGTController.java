@@ -18,39 +18,35 @@ import java.util.List;
 public class GiaGTController {
     @Autowired
     private GiaGTService giaGTService;
-    @GetMapping("")
+    @GetMapping("/get")
     public List<GiaGoiTapDTO> layDSGia() {
         return giaGTService.layDSGia();
     }
-    @GetMapping("/gt")
+    @GetMapping("/getds_gt")
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(@RequestParam(value = "maGT") String maGT) {
         return giaGTService.layDSGiaTheoGoiTap(maGT);
     }
-    @GetMapping("/nv")
+    @GetMapping("/getds_nv")
     public List<GiaGoiTapDTO> layDSGiaTheoNhanVien(@RequestParam(value = "maNV") String maNV) {
         return giaGTService.layDSGiaTheoNhanVien(maNV);
     }
-    @GetMapping("/gtnv")
-    public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(@RequestParam(value = "maGT") String maGT,@RequestParam(value = "maNV") String maNV) {
-        return giaGTService.layDSGiaTheoGoiTap_NhanVien(maGT,maNV);
-    }
 
-    @GetMapping("/gia")//gia/gia?idGia=1
+    @GetMapping("/getgia")//gia/gia?idGia=1
     public GiaGoiTapDTO layGia(@RequestParam(value = "idGia") Integer idGia){
         return giaGTService.layGia(idGia);
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public GiaGoiTapDTO themGia(@Valid @RequestBody GiaGoiTapDTO giaGT) {
         return giaGTService.themGia(giaGT);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public GiaGoiTapDTO suaGia(@Valid @RequestBody GiaGoiTapDTO giaGT) {
         return giaGTService.suaGia(giaGT);
     }
 
-    @DeleteMapping("/{idGia}")
+    @DeleteMapping("/delete/{idGia}")
     public void xoaGia(@PathVariable Integer idGia) {
         giaGTService.xoaGia(idGia);
     }

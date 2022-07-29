@@ -19,26 +19,26 @@ public class LoaiGoiTapController {
     @Autowired
     private LoaiGoiTapService loaiGoiTapService;
 
-    @GetMapping("")
+    @GetMapping("/get")
     public List<LoaiGoiTapDTO> layDSLoaiGoiTap() {
         return loaiGoiTapService.layDSLoaiGoiTap();
     }
-    @GetMapping("/lgt")
+    @GetMapping("/getlgt")//loaigt/lgt?idLoaiGT=2
     public LoaiGoiTapDTO layLoaiGoiTap(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
         return loaiGoiTapService.layLoaiGoiTap(idLoaiGT);
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public LoaiGoiTapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
         return loaiGoiTapService.themLoaiGoiTap(loaiGoiTapDTO);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public LoaiGoiTapDTO suaLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
         return loaiGoiTapService.suaLoaiGoiTap(loaiGoiTapDTO);
     }
 
-    @DeleteMapping("/{idLoaiGT}")
+    @DeleteMapping("/delete/{idLoaiGT}")
     public void xoaLoaiGoiTap(@PathVariable Integer idLoaiGT) {
         loaiGoiTapService.xoaLoaiGoiTap(idLoaiGT);
     }

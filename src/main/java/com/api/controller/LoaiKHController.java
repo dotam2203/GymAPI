@@ -19,27 +19,27 @@ public class LoaiKHController {
     @Autowired
     private LoaiKHService loaiKHService;
 
-    @GetMapping("")
+    @GetMapping("/get")
     public List<LoaiKhachHangDTO> layDSLoaiKH() {
         return loaiKHService.layDSLoaiKH();
     }
 
-    @GetMapping("/lkh") // api/loaikh?idLoaiKH=1
-    public LoaiKhachHangDTO layKhachHang(@RequestParam(value = "idLoaiKH") Integer idLoaiKH){
+    @GetMapping("/getlkh") // api/loaikh?idLoaiKH=1
+    public LoaiKhachHangDTO layLoaiKH(@RequestParam(value = "idLoaiKH") Integer idLoaiKH){
         return loaiKHService.layLoaiKH(idLoaiKH);
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public LoaiKhachHangDTO themLoaiKH(@Valid @RequestBody LoaiKhachHangDTO loaiKhachHangDTO) {
         return loaiKHService.themLoaiKH(loaiKhachHangDTO);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public LoaiKhachHangDTO suaLoaiKH(@Valid @RequestBody LoaiKhachHangDTO loaiKhachHangDTO) {
         return loaiKHService.suaLoaiKH(loaiKhachHangDTO);
     }
 
-    @DeleteMapping("/{idLoaiKH}")
+    @DeleteMapping("/delete/{idLoaiKH}")
     public void xoaLoaiKH(@PathVariable Integer idLoaiKH) {
         loaiKHService.xoaLoaiKH(idLoaiKH);
     }

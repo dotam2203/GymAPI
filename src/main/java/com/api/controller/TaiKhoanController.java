@@ -19,32 +19,32 @@ public class TaiKhoanController {
     @Autowired
     private TaiKhoanService taiKhoanService;
 
-    @GetMapping("")
+    @GetMapping("/get")
     public List<TaiKhoanDTO> layDSTaiKhoan() {
         return taiKhoanService.layDSTaiKhoan();
     }
 
-    @GetMapping("/dstk")
+    @GetMapping("/getds")
     public List<TaiKhoanDTO> layDSTaiKhoanTheoQuyen(@RequestParam(value = "maQuyen") String maQuyen) {
         return taiKhoanService.layDSTaiKhoanTheoQuyen(maQuyen);
     }
 
-    @GetMapping("/tk")
+    @GetMapping("/gettk")
     public TaiKhoanDTO layTaiKhoan(@RequestParam(value = "maTK") String maTK){
         return taiKhoanService.layTaiKhoan(maTK);
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public TaiKhoanDTO themTaiKhoan(@Valid @RequestBody TaiKhoanDTO taiKhoanDTO) {
         return taiKhoanService.themTaiKhoan(taiKhoanDTO);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public TaiKhoanDTO suaTaiKhoan(@Valid @RequestBody TaiKhoanDTO taiKhoanDTO) {
         return taiKhoanService.suaTaiKhoan(taiKhoanDTO);
     }
 
-    @DeleteMapping("/{maTK}")
+    @DeleteMapping("/delete/{maTK}")
     public void xoaTaiKhoan(@PathVariable String maTK) {
         taiKhoanService.xoaTaiKhoan(maTK);
     }

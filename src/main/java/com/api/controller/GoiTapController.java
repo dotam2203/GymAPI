@@ -19,32 +19,32 @@ public class GoiTapController {
     @Autowired
     private GoiTapService goiTapService;
 
-    @GetMapping("")
+    @GetMapping("/get")
     public List<GoiTapDTO> layDSGoiTap() {
         return goiTapService.layDSGoiTap();
     }
 
-    @GetMapping("/dsgt")
+    @GetMapping("/getds")
     public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
         return goiTapService.layDSGoiTapTheoLoaiGT(idLoaiGT);
     }
 
-    @GetMapping("/gt")
+    @GetMapping("/getgt")
     public GoiTapDTO layGoiTap(@RequestParam(value = "maGT") String maGT){
         return goiTapService.layGoiTap(maGT);
     }
 
-    @PostMapping("")
+    @PostMapping("/post")
     public GoiTapDTO themGoiTap(@Valid @RequestBody GoiTapDTO goiTapDTO) {
         return goiTapService.themGoiTap(goiTapDTO);
     }
 
-    @PutMapping("")
+    @PutMapping("/put")
     public GoiTapDTO suagoiTap(@Valid @RequestBody GoiTapDTO goiTapDTO) {
         return goiTapService.suaGoiTap(goiTapDTO);
     }
 
-    @DeleteMapping("/{maGT}")
+    @DeleteMapping("/delete/{maGT}")
     public void xoaGoiTap(@PathVariable String maGT) {
         goiTapService.xoaGoiTap(maGT);
     }
