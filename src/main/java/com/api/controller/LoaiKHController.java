@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  04/07/2022
- */
 @RestController
 @RequestMapping("/loaikh")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,12 +15,12 @@ public class LoaiKHController {
     @Autowired
     private LoaiKHService loaiKHService;
 
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<LoaiKhachHangDTO> layDSLoaiKH() {
         return loaiKHService.layDSLoaiKH();
     }
 
-    @GetMapping("/getlkh") // api/loaikh?idLoaiKH=1
+    @GetMapping("/get") // api/get?idLoaiKH=1
     public LoaiKhachHangDTO layLoaiKH(@RequestParam(value = "idLoaiKH") Integer idLoaiKH){
         return loaiKHService.layLoaiKH(idLoaiKH);
     }

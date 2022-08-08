@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface BaiTapService {
     List<BaiTapDTO> layDSBaiTap();
+    BaiTapDTO layBaiTap(Integer idBT);
     BaiTapDTO themBaiTap(BaiTapDTO baiTapDTO);
     BaiTapDTO suaBaiTap(BaiTapDTO baiTapDTO);
     void xoaBaiTap(Integer idBT);

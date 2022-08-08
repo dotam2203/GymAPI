@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  19/07/2022
- */
 @RestController
 @RequestMapping("/quyen")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,12 +15,12 @@ public class PhanQuyenController {
     @Autowired
     private PhanQuyenService phanQuyenService;
 
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<PhanQuyenDTO> layDSQuyen() {
         return phanQuyenService.layDSQuyen();
     }
 
-    @GetMapping("/getquyen") // api/loaiquyen?maQuyen=1
+    @GetMapping("/get") // api/loaiquyen?maQuyen=1
     public PhanQuyenDTO layQuyen(@RequestParam(value = "maQuyen") String maQuyen){
         return phanQuyenService.layQuyen(maQuyen);
     }

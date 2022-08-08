@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  06/07/2022
- */
 @RestController
 @RequestMapping("/baitap")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,9 +15,14 @@ public class BaiTapController {
     @Autowired
     private BaiTapService baiTapService;
 
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<BaiTapDTO> layDSBaiTap() {
         return baiTapService.layDSBaiTap();
+    }
+
+    @GetMapping("/get")
+    public BaiTapDTO layBaiTap(@RequestParam(value = "idBT") Integer idBT) {
+        return baiTapService.layBaiTap(idBT);
     }
 
     @PostMapping("/post")

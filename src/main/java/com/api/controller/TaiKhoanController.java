@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  19/07/2022
- */
 @RestController
 @RequestMapping("/taikhoan")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,17 +15,17 @@ public class TaiKhoanController {
     @Autowired
     private TaiKhoanService taiKhoanService;
 
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<TaiKhoanDTO> layDSTaiKhoan() {
         return taiKhoanService.layDSTaiKhoan();
     }
 
-    @GetMapping("/getds")
+    @GetMapping("/getquyen")
     public List<TaiKhoanDTO> layDSTaiKhoanTheoQuyen(@RequestParam(value = "maQuyen") String maQuyen) {
         return taiKhoanService.layDSTaiKhoanTheoQuyen(maQuyen);
     }
 
-    @GetMapping("/gettk")
+    @GetMapping("/get")
     public TaiKhoanDTO layTaiKhoan(@RequestParam(value = "maTK") String maTK){
         return taiKhoanService.layTaiKhoan(maTK);
     }

@@ -19,17 +19,17 @@ public class KhachHangController {
     @Autowired
     private KhachHangService khachHangService;
 
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<KhachHangDTO> layDSKhachHang() {
         return khachHangService.layDSKhachHang();
     }
 
-    @GetMapping("/getds")
+    @GetMapping("/getloaikh")
     public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@RequestParam(value = "idLoaiKH") Integer idLoaiKH) {
             return khachHangService.layDSKhachHangTheoLoaiKH(idLoaiKH);
     }
 
-    @GetMapping("/getkh")
+    @GetMapping("/get")
     public KhachHangDTO layKhachHang(@RequestParam(value = "maKH") String maKH) {
         return khachHangService.layKhachHang(maKH);
     }

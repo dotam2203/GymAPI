@@ -23,7 +23,7 @@ public class KhuyenMaiDTO {
     private String moTa;
     private Date ngayBD;
     private Date ngayKT;
-    private String nhanVien;
+    private String maNV;
     private List<CtKhuyenMaiDTO> ctKhuyenMais;
 
     public KhuyenMaiDTO(KhuyenMaiEntity khuyenMai) {
@@ -31,7 +31,7 @@ public class KhuyenMaiDTO {
         this.moTa = khuyenMai.getMoTa();
         this.ngayBD = khuyenMai.getNgayBD();
         this.ngayKT = khuyenMai.getNgayKT();
-        this.nhanVien = khuyenMai.getNhanVien().getMaNV();
+        this.maNV = khuyenMai.getNhanVien().getMaNV();
         if(khuyenMai.getCtKhuyenMais() != null)
             this.ctKhuyenMais = khuyenMai.getCtKhuyenMais().stream().map(CtKhuyenMaiDTO::new).collect(Collectors.toList());
     }

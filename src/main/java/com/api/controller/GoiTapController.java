@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  04/07/2022
- */
 @RestController
 @RequestMapping("/goitap")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,17 +15,17 @@ public class GoiTapController {
     @Autowired
     private GoiTapService goiTapService;
 
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<GoiTapDTO> layDSGoiTap() {
         return goiTapService.layDSGoiTap();
     }
 
-    @GetMapping("/getds")
+    @GetMapping("/getloaigt")
     public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
         return goiTapService.layDSGoiTapTheoLoaiGT(idLoaiGT);
     }
 
-    @GetMapping("/getgt")
+    @GetMapping("/get")
     public GoiTapDTO layGoiTap(@RequestParam(value = "maGT") String maGT){
         return goiTapService.layGoiTap(maGT);
     }

@@ -18,14 +18,14 @@ public class CtTheTapDTO {
     private Integer idCTThe;
     private String donGia;
     private String maGT;
-    private String maHoaDon;
+    private String maHD;
     private String maThe;
 
     public CtTheTapDTO(CtTheTapEntity ctTheTap) {
         this.idCTThe = ctTheTap.getIdCTThe();
         this.donGia = ctTheTap.getDonGia();
         this.maGT = ctTheTap.getGoiTap().getMaGT();
-        this.maHoaDon = ctTheTap.getHoaDon().getMaHD();
+        this.maHD = ctTheTap.getHoaDon().getMaHD();
         this.maThe = ctTheTap.getTheTap().getMaThe();
     }
 

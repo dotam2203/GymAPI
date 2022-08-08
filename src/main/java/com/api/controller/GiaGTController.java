@@ -8,30 +8,26 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  19/07/2022
- */
 @RestController
 @RequestMapping("/gia")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class GiaGTController {
     @Autowired
     private GiaGTService giaGTService;
-    @GetMapping("/get")
+    @GetMapping("/getds")
     public List<GiaGoiTapDTO> layDSGia() {
         return giaGTService.layDSGia();
     }
-    @GetMapping("/getds_gt")
+    @GetMapping("/getgt")
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(@RequestParam(value = "maGT") String maGT) {
         return giaGTService.layDSGiaTheoGoiTap(maGT);
     }
-    @GetMapping("/getds_nv")
+    @GetMapping("/getnv")
     public List<GiaGoiTapDTO> layDSGiaTheoNhanVien(@RequestParam(value = "maNV") String maNV) {
         return giaGTService.layDSGiaTheoNhanVien(maNV);
     }
 
-    @GetMapping("/getgia")//gia/gia?idGia=1
+    @GetMapping("/get")//gia/gia?idGia=1
     public GiaGoiTapDTO layGia(@RequestParam(value = "idGia") Integer idGia){
         return giaGTService.layGia(idGia);
     }
