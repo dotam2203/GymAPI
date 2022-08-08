@@ -49,8 +49,8 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     }
 
     @Override
-    public CtTheTapDTO layCtTheTap(Integer Id) {
-        CtTheTapEntity ctTheTap = ctTheTapRepository.getById(Id);
+    public CtTheTapDTO layCtTheTap(Integer idCTThe) {
+        CtTheTapEntity ctTheTap = ctTheTapRepository.getById(idCTThe);
         return new CtTheTapDTO(ctTheTap);
     }
 
@@ -81,7 +81,7 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     }
 
     @Override
-    public void xoaCtTheTap(Integer Id) {
-        ctTheTapRepository.deleteById(Id);
+    public void xoaCtTheTap(Integer idCTThe) {
+        ctTheTapRepository.deleteById(idCTThe);
     }
 }

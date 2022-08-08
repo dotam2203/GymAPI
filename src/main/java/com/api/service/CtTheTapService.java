@@ -12,5 +12,5 @@ public interface CtTheTapService {
     CtTheTapDTO layCtTheTap(Integer Id);
     CtTheTapDTO themCtTheTap(CtTheTapDTO ctTheTapDTO);
     CtTheTapDTO suaCtTheTap(CtTheTapDTO ctTheTapDTO);
-    void xoaCtTheTap(Integer Id);
+    void xoaCtTheTap(Integer idCTThe);
 }

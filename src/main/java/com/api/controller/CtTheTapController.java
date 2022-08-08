@@ -50,8 +50,8 @@ public class CtTheTapController {
         return ctTheTapService.suaCtTheTap(ctTheTapDTO);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void xoaCtTheTap(@PathVariable Integer id) {
-        ctTheTapService.xoaCtTheTap(id);
+    @DeleteMapping("/delete/{idCTThe}")
+    public void xoaCtTheTap(@PathVariable Integer idCTThe) {
+        ctTheTapService.xoaCtTheTap(idCTThe);
     }
 }
