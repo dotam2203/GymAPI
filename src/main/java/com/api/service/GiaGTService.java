@@ -4,10 +4,6 @@ import com.api.dto.GiaGoiTapDTO;
 
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  21/07/2022
- */
 public interface GiaGTService {
     List<GiaGoiTapDTO> layDSGia();
     List<GiaGoiTapDTO> layDSGiaTheoNhanVien(String maNV);

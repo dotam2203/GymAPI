@@ -18,7 +18,7 @@ public class GiaGTController {
     public List<GiaGoiTapDTO> layDSGia() {
         return giaGTService.layDSGia();
     }
-    @GetMapping("/getgt")
+    @GetMapping("/getgt")//gia/getgt?maGT=GT01
     public List<GiaGoiTapDTO> layDSGiaTheoGoiTap(@RequestParam(value = "maGT") String maGT) {
         return giaGTService.layDSGiaTheoGoiTap(maGT);
     }
@@ -27,7 +27,7 @@ public class GiaGTController {
         return giaGTService.layDSGiaTheoNhanVien(maNV);
     }
 
-    @GetMapping("/get")//gia/gia?idGia=1
+    @GetMapping("/get")//gia/get?idGia=1
     public GiaGoiTapDTO layGia(@RequestParam(value = "idGia") Integer idGia){
         return giaGTService.layGia(idGia);
     }

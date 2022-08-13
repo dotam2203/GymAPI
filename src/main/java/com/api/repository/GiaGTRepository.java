@@ -10,10 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  21/07/2022
- */
 @Repository
 public interface GiaGTRepository extends JpaRepository<GiaGoiTapEntity,Integer> {
     List<GiaGoiTapEntity> findByGoiTap_MaGT(String maGT);
