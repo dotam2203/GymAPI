@@ -13,4 +13,5 @@ import java.util.List;
 @Repository
 public interface TaiKhoanRepository extends JpaRepository<TaiKhoanEntity,String> {
     List<TaiKhoanEntity> findByPhanQuyen_MaQuyen(String maQuyen);
+    TaiKhoanEntity findByNhanVien_MaNV(String maNV);
 }

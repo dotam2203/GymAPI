@@ -1,6 +1,5 @@
 package com.api.service.impl;
 
-import com.api.dto.GoiTapDTO;
 import com.api.dto.TaiKhoanDTO;
 import com.api.entity.*;
 import com.api.repository.NhanVienRepository;
@@ -39,8 +38,14 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
     }
 
     @Override
-    public TaiKhoanDTO layTaiKhoan(String maGT) {
-        TaiKhoanEntity taiKhoan = taiKhoanRepository.getById(maGT);
+    public TaiKhoanEntity layTaiKhoanTheoNV(String maNV) {
+        TaiKhoanEntity taiKhoan = taiKhoanRepository.findByNhanVien_MaNV(maNV);
+        return taiKhoan;
+    }
+
+    @Override
+    public TaiKhoanDTO layTaiKhoan(String maTK) {
+        TaiKhoanEntity taiKhoan = taiKhoanRepository.getById(maTK);
         return new TaiKhoanDTO(taiKhoan);
     }
 
