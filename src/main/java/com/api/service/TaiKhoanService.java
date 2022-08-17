@@ -10,8 +10,6 @@ public interface TaiKhoanService {
 
     List<TaiKhoanDTO> layDSTaiKhoanTheoQuyen(String maQuyen);
 
-    TaiKhoanEntity layTaiKhoanTheoNV(String maNV);
-
     TaiKhoanDTO layTaiKhoan(String maTK);
 
     TaiKhoanDTO themTaiKhoan(TaiKhoanDTO taiKhoanDTO);

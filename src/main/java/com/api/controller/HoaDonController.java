@@ -18,7 +18,10 @@ public class HoaDonController {
     public List<HoaDonDTO> layDSHoaDon() {
         return hoaDonService.layDSHoaDon();
     }
-
+    @GetMapping("/getngay")
+    public List<HoaDonDTO> layDSHoaDonTheoNgayGiam() {
+        return hoaDonService.layDSHoaDonTheoNgayGiam();
+    }
     @GetMapping("/getnv")
     public List<HoaDonDTO> layDSHoaDonTheoNV(@RequestParam(value = "maNV") String maNV) {
         return hoaDonService.layDSHoaDonTheoNV(maNV);

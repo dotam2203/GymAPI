@@ -1,7 +1,6 @@
 package com.api.controller;
 
 import com.api.dto.TaiKhoanDTO;
-import com.api.entity.TaiKhoanEntity;
 import com.api.service.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +23,6 @@ public class TaiKhoanController {
     @GetMapping("/getquyen")
     public List<TaiKhoanDTO> layDSTaiKhoanTheoQuyen(@RequestParam(value = "maQuyen") String maQuyen) {
         return taiKhoanService.layDSTaiKhoanTheoQuyen(maQuyen);
-    }
-    @GetMapping("/getnv")
-    public TaiKhoanEntity layTaiKhoanTheoNV(@RequestParam(value = "maNV") String maNV) {
-        return taiKhoanService.layTaiKhoanTheoNV(maNV);
     }
 
     @GetMapping("/get")

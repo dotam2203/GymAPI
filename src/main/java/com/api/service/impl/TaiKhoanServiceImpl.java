@@ -38,12 +38,6 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
     }
 
     @Override
-    public TaiKhoanEntity layTaiKhoanTheoNV(String maNV) {
-        TaiKhoanEntity taiKhoan = taiKhoanRepository.findByNhanVien_MaNV(maNV);
-        return taiKhoan;
-    }
-
-    @Override
     public TaiKhoanDTO layTaiKhoan(String maTK) {
         TaiKhoanEntity taiKhoan = taiKhoanRepository.getById(maTK);
         return new TaiKhoanDTO(taiKhoan);

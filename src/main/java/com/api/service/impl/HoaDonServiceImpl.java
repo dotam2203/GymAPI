@@ -44,6 +44,13 @@ public class HoaDonServiceImpl implements HoaDonService {
     }
 
     @Override
+    public List<HoaDonDTO> layDSHoaDonTheoNgayGiam() {
+        List<HoaDonEntity> dsHoaDonTheoNgayGiam = hoaDonRepository.findAllByOrderByNgayLapDesc();
+        return dsHoaDonTheoNgayGiam.stream().map(HoaDonDTO::new).collect(Collectors.toList());
+    }
+
+
+    @Override
     public HoaDonDTO layHoaDon(String maHD) {
         HoaDonEntity hoaDon = hoaDonRepository.getById(maHD);
         return new HoaDonDTO(hoaDon);
