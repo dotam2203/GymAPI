@@ -24,7 +24,10 @@ public class GoiTapController {
     public List<GoiTapDTO> layDSGoiTapTheoLoaiGT(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
         return goiTapService.layDSGoiTapTheoLoaiGT(idLoaiGT);
     }
-
+    @GetMapping("/getgt")
+    public GoiTapDTO layGoiTapTheoMaGTVaIdLoaiGT(@RequestParam(value = "maGT") String maGT,@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
+        return goiTapService.layGoiTapTheoMaGTVaIDLoaiGT(maGT,idLoaiGT);
+    }
     @GetMapping("/get")
     public GoiTapDTO layGoiTap(@RequestParam(value = "maGT") String maGT){
         return goiTapService.layGoiTap(maGT);

@@ -11,6 +11,7 @@ import java.util.List;
 public interface GoiTapService {
     List<GoiTapDTO> layDSGoiTap();
     List<GoiTapDTO> layDSGoiTapTheoLoaiGT(Integer idLoaiGT);
+    GoiTapDTO layGoiTapTheoMaGTVaIDLoaiGT(String maGT,Integer idLoaiGT);
     GoiTapDTO layGoiTap(String maGT);
     GoiTapDTO themGoiTap(GoiTapDTO goiTapDTO);
     GoiTapDTO suaGoiTap(GoiTapDTO goiTapDTO);

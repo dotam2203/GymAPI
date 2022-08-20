@@ -36,6 +36,12 @@ public class GoiTapServiceImpl implements GoiTapService {
     }
 
     @Override
+    public GoiTapDTO layGoiTapTheoMaGTVaIDLoaiGT(String maGT, Integer idLoaiGT) {
+        GoiTapEntity goiTap = goiTapRepository.findByMaGTAndLoaiGT(maGT, idLoaiGT);
+        return new GoiTapDTO(goiTap);
+    }
+
+    @Override
     public GoiTapDTO layGoiTap(String maGT) {
         GoiTapEntity goiTap = goiTapRepository.getById(maGT);
         return new GoiTapDTO(goiTap);
