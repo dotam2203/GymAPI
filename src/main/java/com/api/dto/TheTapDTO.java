@@ -10,10 +10,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Author: tamdt35@fpt.com.vn
- * Date:  03/07/2022
- */
 @Getter
 @Setter
 @NoArgsConstructor
