@@ -24,6 +24,7 @@ public class HoaDonDTO {
     private List<CtTheTapDTO> ctTheTaps;
     private String maNV;
     private String maThe;
+    private String tenKH;
 
     public HoaDonDTO(HoaDonEntity hoaDon) {
         this.maHD = hoaDon.getMaHD();
@@ -32,6 +33,7 @@ public class HoaDonDTO {
             this.ctTheTaps = hoaDon.getCtTheTaps().stream().map(CtTheTapDTO::new).collect(Collectors.toList());
         this.maNV = hoaDon.getNhanVien().getMaNV();
         this.maThe = hoaDon.getTheTap().getMaThe();
+        this.tenKH = hoaDon.getTheTap().getKhachHang().getHoTen();
     }
 
     public HoaDonEntity toEntity(){
