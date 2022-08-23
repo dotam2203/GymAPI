@@ -15,8 +15,6 @@ public interface GiaGTRepository extends JpaRepository<GiaGoiTapEntity,Integer> 
     List<GiaGoiTapEntity> findByGoiTap_MaGT(String maGT);
     List<GiaGoiTapEntity> findByNhanVien_MaNV(String maNV);
 
-    @Transactional
-    @Modifying
-    @Query(value = "SELECT * FROM GIAGOITAP WHERE MaGT =: maGT AND MaNV =: maNV", nativeQuery = true)
+    @Query(value = "SELECT * FROM GIAGOITAP WHERE maGT =: maGT AND maNV =: maNV", nativeQuery = true)
     List<GiaGoiTapEntity> findGiaGoiTap(@Param("maGT") String maGT, @Param("maNV") String maNV);
 }

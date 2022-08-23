@@ -17,7 +17,5 @@ import java.util.List;
 @Repository
 public interface GoiTapRepository extends JpaRepository<GoiTapEntity,String> {
     List<GoiTapEntity> findByLoaiGT_IdLoaiGT(Integer idLoaiGT);
-    //GoiTapEntity findByMaGTAndLoaiGT_IdLoaiGT(String maGT, Integer idLoaiGT);
-    @Query(value = "SELECT * FROM GoiTap WHERE maGT = :maGT and loaiGT.idLoaiGT = :idLoaiGT", nativeQuery = true)
-    GoiTapEntity findGoiTapByParams(@Param("maGT") String maGT, @Param("idLoaiGT") Integer idLoaiGT);
+    GoiTapEntity findByMaGTAndLoaiGT_IdLoaiGT(String maGT, Integer idLoaiGT);
 }
