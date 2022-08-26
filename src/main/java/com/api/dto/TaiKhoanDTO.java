@@ -20,6 +20,7 @@ public class TaiKhoanDTO {
     private String trangThai;
     private String maQuyen;
     private String maNV;
+    private String email;
 
     public TaiKhoanDTO(TaiKhoanEntity taiKhoan) {
         this.maTK = taiKhoan.getMaTK();
@@ -27,6 +28,7 @@ public class TaiKhoanDTO {
         this.trangThai = taiKhoan.getTrangThai();
         this.maQuyen = taiKhoan.getPhanQuyen().getMaQuyen();
         this.maNV = taiKhoan.getNhanVien().getMaNV();
+        this.email = taiKhoan.getNhanVien().getEmail();
     }
 
     public TaiKhoanEntity toEntity(){

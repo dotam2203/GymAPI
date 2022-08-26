@@ -2,11 +2,7 @@ package com.api.repository;
 
 import com.api.entity.GoiTapEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,5 +13,9 @@ import java.util.List;
 @Repository
 public interface GoiTapRepository extends JpaRepository<GoiTapEntity,String> {
     List<GoiTapEntity> findByLoaiGT_IdLoaiGT(Integer idLoaiGT);
+    /*@Transactional
+    @Modifying
+    @Query("SELECT a FROM GoiTap a WHERE a.maGT=?1 AND a.LoaiGT.idLoaiGT=?2")
+    *///GoiTapEntity findByMaGTAndIdLoaiGT(String maGT, Integer idLoaiGT);
     GoiTapEntity findByMaGTAndLoaiGT_IdLoaiGT(String maGT, Integer idLoaiGT);
 }
