@@ -23,6 +23,7 @@ public class GoiTapDTO {
     private String moTa;
     private String trangThai;
     private Integer idLoaiGT;
+    private String tenLoaiGT;
     private List<GiaGoiTapDTO> giaGoiTaps;
     private List<CtTheTapDTO> ctTheTaps;
     private List<CtKhuyenMaiDTO> ctKhuyenMais;
@@ -34,6 +35,7 @@ public class GoiTapDTO {
         this.moTa = goiTap.getMoTa();
         this.trangThai = goiTap.getTrangThai();
         this.idLoaiGT = goiTap.getLoaiGT().getIdLoaiGT();
+        this.tenLoaiGT = goiTap.getLoaiGT().getTenLoaiGT();
         if(goiTap.getGiaGoiTaps() != null)
             this.giaGoiTaps = goiTap.getGiaGoiTaps().stream().map(GiaGoiTapDTO::new).collect(Collectors.toList());
         if(goiTap.getCtTheTaps() != null)
