@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class LoaiKhachHangEntity {
     private Integer idLoaiKH;
 
     @Basic(optional = false)
-    @Column(name = "TenLoaiKH")
+    @Column(name = "TenLoaiKH", length = 50)
     private String tenLoaiKH;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "loaiKH")

@@ -24,7 +24,7 @@ import java.util.List;
 public class TheTapEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaThe")
+    @Column(name = "MaThe", length = 10)
     @Nationalized
     private String maThe;
 
@@ -47,7 +47,7 @@ public class TheTapEntity {
     private Date ngayKT;
 
     @Basic(optional = false)
-    @Column(name = "TrangThai")
+    @Column(name = "TrangThai", length = 50)
     @Nationalized
     private String trangThai;
 

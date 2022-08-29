@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 /**
  * Author: tamdt35@fpt.com.vn
@@ -20,15 +21,15 @@ import javax.persistence.*;
 public class TaiKhoanEntity{
     @Id
     @Basic(optional = false)
-    @Column(name = "MaTK")
+    @Column(name = "MaTK", length = 20)
     private String maTK;
 
     @Basic(optional = false)
-    @Column(name = "MatKhau")
+    @Column(name = "MatKhau", length = 50)
     private String matKhau;
 
     @Basic(optional = false)
-    @Column(name = "TrangThai")
+    @Column(name = "TrangThai", length = 50)
     private String trangThai;
 
     @JoinColumn(name = "MaQuyen")

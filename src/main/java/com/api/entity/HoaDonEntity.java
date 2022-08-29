@@ -8,6 +8,7 @@ import org.hibernate.annotations.Nationalized;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,7 @@ import java.util.List;
 public class HoaDonEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaHD")
+    @Column(name = "MaHD", length = 10)
     @Nationalized
     private String maHD;
 

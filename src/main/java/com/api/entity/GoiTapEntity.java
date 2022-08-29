@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -20,13 +21,14 @@ import java.util.List;
 @Entity
 @Table(name = "GOITAP")
 public class GoiTapEntity {
+
     @Id
     @Basic(optional = false)
-    @Column(name = "MaGT")
+    @Column(name = "MaGT", length = 10)
     private String maGT;
 
     @Basic(optional = false)
-    @Column(name = "TenGT")
+    @Column(name = "TenGT", length = 50)
     @Nationalized
     private String tenGT;
 
@@ -35,7 +37,7 @@ public class GoiTapEntity {
     private String moTa;
 
     @Basic(optional = false)
-    @Column(name = "TrangThai")
+    @Column(name = "TrangThai", length = 50)
     @Nationalized
     private String trangThai;
 

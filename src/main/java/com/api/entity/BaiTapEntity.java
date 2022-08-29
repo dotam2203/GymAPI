@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public class BaiTapEntity {
     private Integer idBT;
 
     @Basic(optional = false)
-    @Column(name = "TenBT")
+    @Column(name = "TenBT", length = 50)
     @Nationalized
     private String tenBT;
 

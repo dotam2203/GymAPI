@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 /**
  * Author: tamdt35@fpt.com.vn
@@ -25,7 +26,7 @@ public class CtKhuyenMaiEntity {
     private Integer idCTKM;
 
     @Basic(optional = false)
-    @Column(name = "PhanTramGiamGia")
+    @Column(name = "PhanTramGiamGia", length = 10)
     private Float phanTramGiam;
 
     @JoinColumn(name = "IDKM")

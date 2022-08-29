@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -24,12 +25,12 @@ import java.util.List;
 public class PhanQuyenEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaQuyen")
+    @Column(name = "MaQuyen", length = 10)
     @Nationalized
     private String maQuyen;
 
     @Basic(optional = false)
-    @Column(name = "TenQuyen")
+    @Column(name = "TenQuyen", length = 50)
     @Nationalized
     private String tenQuyen;
 
