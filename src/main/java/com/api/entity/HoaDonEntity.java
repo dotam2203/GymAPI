@@ -25,7 +25,7 @@ import java.util.List;
 public class HoaDonEntity {
     @Id
     @Basic(optional = false)
-    @Column(name = "MaHD", length = 10)
+    @Column(name = "MaHD", length = 20)
     @Nationalized
     private String maHD;
 
