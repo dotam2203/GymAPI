@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface CtTheTapRepository extends JpaRepository<CtTheTapEntity,Integer> {
     List<CtTheTapEntity> findByHoaDon_MaHD(String maHD);
-    List<CtTheTapEntity> findByTheTap_MaThe(String maThe);
+    CtTheTapEntity findByTheTap_MaThe(String maThe);
     List<CtTheTapEntity> findByGoiTap_MaGT(String maGT);
 }

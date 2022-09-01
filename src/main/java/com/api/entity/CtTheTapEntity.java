@@ -41,8 +41,8 @@ public class CtTheTapEntity {
     @Basic(optional = false)
     private HoaDonEntity hoaDon;
 
-    @JoinColumn(name = "MaThe")
-    @ManyToOne
+    @JoinColumn(name = "MaThe", unique = true)
+    @OneToOne
     @Basic(optional = false)
     private TheTapEntity theTap;
 }

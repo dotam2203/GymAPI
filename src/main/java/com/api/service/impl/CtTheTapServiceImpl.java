@@ -43,9 +43,9 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     }
 
     @Override
-    public List<CtTheTapDTO> layDSCtTheTapTheoThe(String maThe) {
-        List<CtTheTapEntity> dsCtTheTheoThe = ctTheTapRepository.findByTheTap_MaThe(maThe);
-        return dsCtTheTheoThe.stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+    public CtTheTapDTO layCtTheTapTheoThe(String maThe) {
+        CtTheTapEntity ctTheTheoThe = ctTheTapRepository.findByTheTap_MaThe(maThe);
+        return new CtTheTapDTO(ctTheTheoThe);
     }
 
     @Override

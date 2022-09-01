@@ -31,8 +31,8 @@ public class CtTheTapController {
     }
 
     @GetMapping("/getthe")
-    public List<CtTheTapDTO> layDSCtTheTapTheoThe(@RequestParam(value = "maThe") String maThe) {
-        return ctTheTapService.layDSCtTheTapTheoThe(maThe);
+    public CtTheTapDTO layDSCtTheTapTheoThe(@RequestParam(value = "maThe") String maThe) {
+        return ctTheTapService.layCtTheTapTheoThe(maThe);
     }
 
     @GetMapping("/get")
