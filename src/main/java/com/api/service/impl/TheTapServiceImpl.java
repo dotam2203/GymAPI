@@ -9,6 +9,9 @@ import com.api.service.TheTapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
@@ -37,6 +40,16 @@ public class TheTapServiceImpl implements TheTapService {
         KhachHangEntity khachHang = khachHangRepository.getById(theTapDTO.getMaKH());
         TheTapEntity theTap = theTapDTO.toEntity();
         theTap.setKhachHang(khachHang);
+        try {
+            if(compareToDate(theTap.getNgayBD())){
+                theTap.setTrangThai("Hoạt động");
+            }
+            else if(!compareToDate(theTap.getNgayBD())){
+                theTap.setTrangThai("Khóa");
+            }
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         return new TheTapDTO(theTapRepository.save(theTap));
     }
     @Override
@@ -54,5 +67,20 @@ public class TheTapServiceImpl implements TheTapService {
     @Override
     public void xoaTheTap(String maThe) {
         theTapRepository.deleteById(maThe);
+    }
+    private Boolean compareToDate(Date dateStart) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDate = sdf.format(new Date());
+        Date date1 = sdf.parse(currentDate) ;
+        //Date date2 = sdf.parse(dateStart) ;
+        if(date1.compareTo(dateStart) == 0)
+            return true;
+        else {
+            if(date1.compareTo(dateStart) < 0)
+                return true;
+            else if(date1.compareTo(dateStart) > 0)
+                return false;
+        }
+        return false;
     }
 }
