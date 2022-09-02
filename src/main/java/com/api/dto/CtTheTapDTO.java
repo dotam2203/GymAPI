@@ -26,6 +26,8 @@ public class CtTheTapDTO {
     private String maKH;
     private String tenGT;
     private String tenLoaiGT;
+    private Date ngayDK;
+
     private Date ngayBD;
     private Date ngayKT;
     private String trangThai;
@@ -41,6 +43,7 @@ public class CtTheTapDTO {
         this.tenGT = ctTheTap.getGoiTap().getTenGT();
         this.tenLoaiGT = ctTheTap.getGoiTap().getLoaiGT().getTenLoaiGT();
         this.trangThai = ctTheTap.getTheTap().getTrangThai();
+        this.ngayDK = ctTheTap.getTheTap().getNgayDK();
         this.ngayBD = ctTheTap.getTheTap().getNgayBD();
         this.ngayKT = ctTheTap.getTheTap().getNgayKT();
     }
