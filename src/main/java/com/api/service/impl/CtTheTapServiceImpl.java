@@ -11,6 +11,7 @@ import com.api.service.CtTheTapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +28,31 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     @Override
     public List<CtTheTapDTO> layDSCtTheTap() {
         List<CtTheTapEntity> dsCtThe = ctTheTapRepository.findAll();
-        return dsCtThe.stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+        List<CtTheTapEntity> temp = new ArrayList<>();
+        int dem = 0;
+        for(int i = 0; i < dsCtThe.size(); i++){
+            if(i == 0){
+                temp.add(dsCtThe.get(i));
+            }
+            else if(temp.get(dem).getGoiTap().getMaGT().equals(dsCtThe.get(i).getGoiTap().getMaGT())){
+                long sum = tongDoanhThu(temp.get(dem).getDonGia() + tongDoanhThu(dsCtThe.get(i).getDonGia()));
+                temp.get(dem).setDonGia(String.valueOf(sum));
+            }
+            else {
+                temp.add(dsCtThe.get(i));
+                dem++;
+            }
+        }
+        return temp.stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+    }
+    private Long tongDoanhThu(String donGia){
+        String[] str1 = donGia.split(" ");
+        String[] str2 = str1[0].split(",");
+        String str = "";
+        for(int i = 0; i <= str2.length; i++){
+            str += str2[i];
+        }
+        return Long.parseLong(str.trim());
     }
 
     @Override
