@@ -11,7 +11,10 @@ import com.api.service.CtTheTapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,33 +29,63 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     @Autowired
     GoiTapRepository goiTapRepository;
     @Override
-    public List<CtTheTapDTO> layDSCtTheTap() {
+    public List<CtTheTapDTO> layDSCtTheTap(Date ngayBD, Date ngayKT) {
         List<CtTheTapEntity> dsCtThe = ctTheTapRepository.findAll();
         List<CtTheTapEntity> temp = new ArrayList<>();
-        int dem = 0;
-        for(int i = 0; i < dsCtThe.size(); i++){
-            if(i == 0){
-                temp.add(dsCtThe.get(i));
-            }
-            else if(temp.get(dem).getGoiTap().getMaGT().equals(dsCtThe.get(i).getGoiTap().getMaGT())){
-                long sum = tongDoanhThu(temp.get(dem).getDonGia() + tongDoanhThu(dsCtThe.get(i).getDonGia()));
-                temp.get(dem).setDonGia(String.valueOf(sum));
-            }
-            else {
-                temp.add(dsCtThe.get(i));
-                dem++;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
+        String dateStart = dateFormat.format(ngayBD);
+        String dateEnd = dateFormat.format(ngayKT);
+        boolean xet = true;
+        for (int i = 0; i < dsCtThe.size(); i++) {
+            xet = true;
+            String date = dateFormat.format(dsCtThe.get(i).getTheTap().getNgayDK());
+            int result1 = date.compareTo(dateStart);
+            int result2 = date.compareTo(dateEnd);
+            /*System.out.println("\ndateS: " + dateStart);
+            System.out.println("\ndate: " + date);
+            System.out.println("\ndateE: " + dateEnd);*/
+            if ((result1 >= 0 && result2 <= 0)){
+                //System.out.println("\nds tháng: " + date);
+                if(i == 0){
+                    temp.add(dsCtThe.get(i));
+                    //System.out.println("\n1Doanh thu tháng "+ date +":" + dsCtThe.get(i).getDonGia());
+                }
+                else{
+                    for (CtTheTapEntity ctTheTap : temp) {
+                        String date1 = dateFormat.format(ctTheTap.getTheTap().getNgayDK());
+                        String date2 = dateFormat.format(dsCtThe.get(i).getTheTap().getNgayDK());
+                        if (ctTheTap.getGoiTap().getMaGT().equals(dsCtThe.get(i).getGoiTap().getMaGT()) && (date1.compareTo(date2) == 0)) {
+                            xet = false;
+                            long sum = tongDoanhThu(ctTheTap.getDonGia()) + tongDoanhThu(dsCtThe.get(i).getDonGia());
+                            ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                           // System.out.println("\n2Doanh thu tháng "+ date +":" + formatMoney(String.valueOf(sum)) + " đ");
+                            break;
+                        }
+                    }
+                    if(xet){
+                        temp.add(dsCtThe.get(i));
+                        //System.out.println("\n3Doanh thu tháng "+ date +":" + dsCtThe.get(i).getDonGia());
+                    }
+                }
             }
         }
         return temp.stream().map(CtTheTapDTO::new).collect(Collectors.toList());
     }
+
     private Long tongDoanhThu(String donGia){
+        //100,000 đ
         String[] str1 = donGia.split(" ");
         String[] str2 = str1[0].split(",");
         String str = "";
-        for(int i = 0; i <= str2.length; i++){
-            str += str2[i];
+        for (String s : str2) {
+            str += s;
         }
         return Long.parseLong(str.trim());
+    }
+    private String formatMoney(String money){
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
+        numberFormat.setMaximumFractionDigits(0);
+        return numberFormat.format(Integer.parseInt(money)).substring(1);
     }
 
     @Override
