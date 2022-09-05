@@ -29,7 +29,13 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     @Autowired
     GoiTapRepository goiTapRepository;
     @Override
-    public List<CtTheTapDTO> layDSCtTheTap(Date ngayBD, Date ngayKT) {
+    public List<CtTheTapDTO> layDSCtTheTap() {
+        List<CtTheTapEntity> dsCtThe = ctTheTapRepository.findAll();
+        return dsCtThe.stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CtTheTapDTO> layLocDSCtTheTap(Date ngayBD, Date ngayKT)  {
         List<CtTheTapEntity> dsCtThe = ctTheTapRepository.findAll();
         List<CtTheTapEntity> temp = new ArrayList<>();
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
