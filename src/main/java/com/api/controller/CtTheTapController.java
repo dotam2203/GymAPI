@@ -20,9 +20,13 @@ public class CtTheTapController {
     public List<CtTheTapDTO> layDSCtTheTap() {
         return ctTheTapService.layDSCtTheTap();
     }
-    @GetMapping("/sort")//sort?ngayDB=2022-09-01&ngayKT=2022-09-30
-    public List<CtTheTapDTO> layLocDSCtTheTap(@RequestParam(value = "ngayBD") Date ngayBD, @RequestParam(value = "ngayKT") Date ngayKT) {
-        return ctTheTapService.layLocDSCtTheTap(ngayBD,ngayKT);
+    @GetMapping("/sort_thang")//sort_thang?ngayDB=2022-09-01&ngayKT=2022-09-30
+    public List<CtTheTapDTO> layLocDSCtTheTapThang(@RequestParam(value = "ngayBD") Date ngayBD, @RequestParam(value = "ngayKT") Date ngayKT) {
+        return ctTheTapService.locDSCtTheTapThang(ngayBD,ngayKT);
+    }
+    @GetMapping("/sort_dv")//sort_dv?ngayDB=2022-09-01&ngayKT=2022-09-30
+    public List<CtTheTapDTO> locDSCtTheTapTheoDV(@RequestParam(value = "ngayBD") Date ngayBD, @RequestParam(value = "ngayKT") Date ngayKT) {
+        return ctTheTapService.locDSCtTheTapTheoDV(ngayBD,ngayKT);
     }
 
     @GetMapping("/gethd")

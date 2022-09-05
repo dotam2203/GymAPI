@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface CtTheTapService {
     List<CtTheTapDTO> layDSCtTheTap();
-    List<CtTheTapDTO> layLocDSCtTheTap(Date ngayBD, Date ngayKT);
+    List<CtTheTapDTO> locDSCtTheTapThang(Date ngayBD, Date ngayKT);
+    List<CtTheTapDTO> locDSCtTheTapTheoDV(Date ngayBD, Date ngayKT);
     List<CtTheTapDTO> layDSCtTheTapTheoHD(String maHD);
     List<CtTheTapDTO> layDSCtTheTapTheoGT(String maGT);
     CtTheTapDTO layCtTheTapTheoThe(String maThe);

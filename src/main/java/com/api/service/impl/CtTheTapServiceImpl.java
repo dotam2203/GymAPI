@@ -35,7 +35,7 @@ public class CtTheTapServiceImpl implements CtTheTapService {
     }
 
     @Override
-    public List<CtTheTapDTO> layLocDSCtTheTap(Date ngayBD, Date ngayKT)  {
+    public List<CtTheTapDTO> locDSCtTheTapThang(Date ngayBD, Date ngayKT)  {
         List<CtTheTapEntity> dsCtThe = ctTheTapRepository.findAll();
         List<CtTheTapEntity> temp = new ArrayList<>();
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
@@ -47,14 +47,9 @@ public class CtTheTapServiceImpl implements CtTheTapService {
             String date = dateFormat.format(dsCtThe.get(i).getTheTap().getNgayDK());
             int result1 = date.compareTo(dateStart);
             int result2 = date.compareTo(dateEnd);
-            /*System.out.println("\ndateS: " + dateStart);
-            System.out.println("\ndate: " + date);
-            System.out.println("\ndateE: " + dateEnd);*/
             if ((result1 >= 0 && result2 <= 0)){
-                //System.out.println("\nds tháng: " + date);
                 if(i == 0){
                     temp.add(dsCtThe.get(i));
-                    //System.out.println("\n1Doanh thu tháng "+ date +":" + dsCtThe.get(i).getDonGia());
                 }
                 else{
                     for (CtTheTapEntity ctTheTap : temp) {
@@ -64,13 +59,48 @@ public class CtTheTapServiceImpl implements CtTheTapService {
                             xet = false;
                             long sum = tongDoanhThu(ctTheTap.getDonGia()) + tongDoanhThu(dsCtThe.get(i).getDonGia());
                             ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
-                           // System.out.println("\n2Doanh thu tháng "+ date +":" + formatMoney(String.valueOf(sum)) + " đ");
                             break;
                         }
                     }
                     if(xet){
                         temp.add(dsCtThe.get(i));
-                        //System.out.println("\n3Doanh thu tháng "+ date +":" + dsCtThe.get(i).getDonGia());
+                    }
+                }
+            }
+        }
+        return temp.stream().map(CtTheTapDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CtTheTapDTO> locDSCtTheTapTheoDV(Date ngayBD, Date ngayKT) {
+        List<CtTheTapEntity> dsCtThe = ctTheTapRepository.findAll();
+        List<CtTheTapEntity> temp = new ArrayList<>();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
+        String dateStart = dateFormat.format(ngayBD);
+        String dateEnd = dateFormat.format(ngayKT);
+        boolean xet = true;
+        for (int i = 0; i < dsCtThe.size(); i++) {
+            xet = true;
+            String date = dateFormat.format(dsCtThe.get(i).getTheTap().getNgayDK());
+            int result1 = date.compareTo(dateStart);
+            int result2 = date.compareTo(dateEnd);
+            if ((result1 >= 0 && result2 <= 0)){
+                if(i == 0){
+                    temp.add(dsCtThe.get(i));
+                }
+                else{
+                    for (CtTheTapEntity ctTheTap : temp) {
+                        String date1 = dateFormat.format(ctTheTap.getTheTap().getNgayDK());
+                        String date2 = dateFormat.format(dsCtThe.get(i).getTheTap().getNgayDK());
+                        if (ctTheTap.getGoiTap().getMaGT().equals(dsCtThe.get(i).getGoiTap().getMaGT())) {
+                            xet = false;
+                            long sum = tongDoanhThu(ctTheTap.getDonGia()) + tongDoanhThu(dsCtThe.get(i).getDonGia());
+                            ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            break;
+                        }
+                    }
+                    if(xet){
+                        temp.add(dsCtThe.get(i));
                     }
                 }
             }
