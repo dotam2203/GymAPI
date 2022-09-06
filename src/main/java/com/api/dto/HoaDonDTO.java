@@ -26,6 +26,7 @@ public class HoaDonDTO {
     private String maThe;
     private String maKH;
     private String tenKH;
+    private String sdt;
 
     public HoaDonDTO(HoaDonEntity hoaDon) {
         this.maHD = hoaDon.getMaHD();
@@ -36,6 +37,7 @@ public class HoaDonDTO {
         this.maThe = hoaDon.getTheTap().getMaThe();
         this.maKH = hoaDon.getTheTap().getKhachHang().getMaKH();
         this.tenKH = hoaDon.getTheTap().getKhachHang().getHoTen();
+        this.sdt = hoaDon.getTheTap().getKhachHang().getSdt();
     }
 
     public HoaDonEntity toEntity(){
