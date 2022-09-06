@@ -17,7 +17,7 @@ public class TheTapController {
 
     @GetMapping("/getds")
     public List<TheTapDTO> layDSTheTap(){
-        return theTapService.layDSTheTap();
+        return theTapService.layDSTheTapTheoNgayBD();
     }
     @GetMapping("/getkh")
     public List<TheTapDTO> layDSTheTapTheoKH(@RequestParam(value = "maKH") String maKH){

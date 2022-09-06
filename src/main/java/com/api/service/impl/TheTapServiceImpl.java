@@ -27,6 +27,13 @@ public class TheTapServiceImpl implements TheTapService {
         List<TheTapEntity> dsTheTapTheoKH = theTapRepository.findByKhachHang_MaKH(maKH);
         return dsTheTapTheoKH.stream().map(TheTapDTO::new).collect(Collectors.toList());
     }
+
+    @Override
+    public List<TheTapDTO> layDSTheTapTheoNgayBD() {
+        List<TheTapEntity> dsTheTapTheoKH = theTapRepository.findAllByOrderByNgayBDDesc();
+        return dsTheTapTheoKH.stream().map(TheTapDTO::new).collect(Collectors.toList());
+    }
+
     @Override
     public TheTapDTO layTheTap(String maThe) {
         TheTapEntity theTap = theTapRepository.getById(maThe);
