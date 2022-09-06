@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface TheTapRepository extends JpaRepository<TheTapEntity,String> {
     List<TheTapEntity> findByKhachHang_MaKH(String maKH);
-    List<TheTapEntity> findAllByOrderByNgayBDDesc();
+    List<TheTapEntity> findAllByOrderByNgayBDAsc();
 
 
 }

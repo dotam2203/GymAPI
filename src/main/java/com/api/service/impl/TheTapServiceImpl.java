@@ -30,7 +30,7 @@ public class TheTapServiceImpl implements TheTapService {
 
     @Override
     public List<TheTapDTO> layDSTheTapTheoNgayBD() {
-        List<TheTapEntity> dsTheTapTheoKH = theTapRepository.findAllByOrderByNgayBDDesc();
+        List<TheTapEntity> dsTheTapTheoKH = theTapRepository.findAllByOrderByNgayBDAsc();
         return dsTheTapTheoKH.stream().map(TheTapDTO::new).collect(Collectors.toList());
     }
 
