@@ -71,11 +71,12 @@ public class GiaGTServiceImpl implements GiaGTService {
         GoiTapEntity goiTap = goiTapRepository.getById(giaGoiTapDTO.getMaGT());
         NhanVienEntity nhanVien = nhanVienRepository.getById(giaGoiTapDTO.getMaNV());
         GiaGoiTapEntity gia = giaRepository.getById(giaGoiTapDTO.getIdGia());
-        gia.setNgayApDung(gia.getNgayApDung());
-        gia.setGia(gia.getGia());
+        gia.setNgayApDung(giaGoiTapDTO.getNgayApDung());
+        gia.setGia(giaGoiTapDTO.getGia());
         gia.setGoiTap(goiTap);
         gia.setNhanVien(nhanVien);
-        return new GiaGoiTapDTO(giaRepository.save(gia));
+        GiaGoiTapEntity save = giaRepository.save(gia);
+        return new GiaGoiTapDTO(save);
     }
 
     @Override

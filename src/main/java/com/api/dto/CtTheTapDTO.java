@@ -22,7 +22,6 @@ public class CtTheTapDTO {
     private String maGT;
     private String maHD;
     private String maThe;
-
     private String maKH;
     private String tenGT;
     private String tenLoaiGT;
