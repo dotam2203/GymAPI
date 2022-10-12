@@ -16,19 +16,19 @@ public class CtTheTapController {
     @Autowired
     private CtTheTapService ctTheTapService;
 
-    @GetMapping("/getds")//getds?ngayDB=2022-09-01&ngayKT=2022-09-30
+    @GetMapping("/getds")//getds?ngayBD=2022-09-01&ngayKT=2022-09-30
     public List<CtTheTapDTO> layDSCtTheTap() {
         return ctTheTapService.layDSCtTheTap();
     }
-    @GetMapping("/sort_sum")//sort_sum?ngayDB=2022-09-01&ngayKT=2022-09-30
+    /*@GetMapping("/sort_sum")//sort_sum?ngayBD=2022-09-01&ngayKT=2022-09-30
     public List<CtTheTapDTO> layLocDoanhThuThang(@RequestParam(value = "ngayBD") Date ngayBD, @RequestParam(value = "ngayKT") Date ngayKT) {
         return ctTheTapService.locDoanhThuThang(ngayBD,ngayKT);
-    }
-    @GetMapping("/sort_thang")//sort_thang?ngayDB=2022-09-01&ngayKT=2022-09-30
+    }*/
+    @GetMapping("/sort_thang")//sort_thang?ngayBD=2022-09-01&ngayKT=2022-09-30
     public List<CtTheTapDTO> layLocDSCtTheTapThang(@RequestParam(value = "ngayBD") Date ngayBD, @RequestParam(value = "ngayKT") Date ngayKT) {
-        return ctTheTapService.locDSCtTheTapThang(ngayBD,ngayKT);
+        return ctTheTapService.locDoanhThuThang(ngayBD,ngayKT);
     }
-    @GetMapping("/sort_dv")//sort_dv?ngayDB=2022-09-01&ngayKT=2022-09-30
+    @GetMapping("/sort_dv")//sort_dv?ngayBD=2022-09-01&ngayKT=2022-09-30
     public List<CtTheTapDTO> locDSCtTheTapTheoDV(@RequestParam(value = "ngayBD") Date ngayBD, @RequestParam(value = "ngayKT") Date ngayKT) {
         return ctTheTapService.locDSCtTheTapTheoDV(ngayBD,ngayKT);
     }
