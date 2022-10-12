@@ -58,7 +58,8 @@ public class CtTheTapServiceImpl implements CtTheTapService {
                         if (date1.compareTo(date2) == 0) {
                             xet = false;
                             long sum = tongDoanhThu(ctTheTap.getDonGia()) + tongDoanhThu(dsCtThe.get(i).getDonGia());
-                            ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            //ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            ctTheTap.setDonGia(String.valueOf(sum));
                             break;
                         }
                     }
@@ -95,7 +96,8 @@ public class CtTheTapServiceImpl implements CtTheTapService {
                         if (ctTheTap.getGoiTap().getMaGT().equals(dsCtThe.get(i).getGoiTap().getMaGT()) && (date1.compareTo(date2) == 0)) {
                             xet = false;
                             long sum = tongDoanhThu(ctTheTap.getDonGia()) + tongDoanhThu(dsCtThe.get(i).getDonGia());
-                            ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            //ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            ctTheTap.setDonGia(String.valueOf(sum));
                             break;
                         }
                     }
@@ -132,7 +134,8 @@ public class CtTheTapServiceImpl implements CtTheTapService {
                         if (ctTheTap.getGoiTap().getMaGT().equals(dsCtThe.get(i).getGoiTap().getMaGT())) {
                             xet = false;
                             long sum = tongDoanhThu(ctTheTap.getDonGia()) + tongDoanhThu(dsCtThe.get(i).getDonGia());
-                            ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            //ctTheTap.setDonGia(formatMoney(String.valueOf(sum)) + " đ");
+                            ctTheTap.setDonGia(String.valueOf(sum));
                             break;
                         }
                     }
