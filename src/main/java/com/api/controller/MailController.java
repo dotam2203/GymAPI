@@ -20,6 +20,7 @@ public class MailController {
     public JavaMailSender mailSender;
     @ResponseBody
     @RequestMapping("/sendmail")
+    @GetMapping
     public String sendEmail(@RequestParam(value = "toMail") String toMail){
         // Create a Simple MailMessage.
         SimpleMailMessage message = new SimpleMailMessage();
