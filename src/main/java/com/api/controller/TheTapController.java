@@ -14,7 +14,6 @@ import java.util.List;
 public class TheTapController {
     @Autowired
     private TheTapService theTapService;
-
     @GetMapping("/getds")
     public List<TheTapDTO> layDSTheTap(){
         return theTapService.layDSTheTapTheoNgayBD();
@@ -39,5 +38,4 @@ public class TheTapController {
     public void xoaTheTap(@PathVariable String maThe) {
         theTapService.xoaTheTap(maThe);
     }
-
 }

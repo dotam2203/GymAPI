@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Author: tamdt35@fpt.com.vn
@@ -20,12 +17,11 @@ public class MailController {
     public JavaMailSender mailSender;
     @ResponseBody
     @RequestMapping("/sendmail")
-    @GetMapping
-    public String sendEmail(@RequestParam(value = "toMail") String toMail){
+    public String sendEmail(){
         // Create a Simple MailMessage.
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setTo(toMail);
+        message.setTo(MyConstants.FRIEND_EMAIL);
         message.setSubject("Test Simple Email");
         message.setText("Hello, Im testing Simple Email");
 

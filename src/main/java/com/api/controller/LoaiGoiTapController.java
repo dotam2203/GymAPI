@@ -14,7 +14,6 @@ import java.util.List;
 public class LoaiGoiTapController {
     @Autowired
     private LoaiGoiTapService loaiGoiTapService;
-
     @GetMapping("/getds")
     public List<LoaiGoiTapDTO> layDSLoaiGoiTap() {
         return loaiGoiTapService.layDSLoaiGoiTap();
@@ -23,17 +22,14 @@ public class LoaiGoiTapController {
     public LoaiGoiTapDTO layLoaiGoiTap(@RequestParam(value = "idLoaiGT") Integer idLoaiGT) {
         return loaiGoiTapService.layLoaiGoiTap(idLoaiGT);
     }
-
     @PostMapping("/post")
     public LoaiGoiTapDTO themLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
         return loaiGoiTapService.themLoaiGoiTap(loaiGoiTapDTO);
     }
-
     @PutMapping("/put")
     public LoaiGoiTapDTO suaLoaiGoiTap(@Valid @RequestBody LoaiGoiTapDTO loaiGoiTapDTO) {
         return loaiGoiTapService.suaLoaiGoiTap(loaiGoiTapDTO);
     }
-
     @DeleteMapping("/delete/{idLoaiGT}")
     public void xoaLoaiGoiTap(@PathVariable Integer idLoaiGT) {
         loaiGoiTapService.xoaLoaiGoiTap(idLoaiGT);

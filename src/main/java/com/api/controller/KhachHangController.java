@@ -18,32 +18,26 @@ import java.util.List;
 public class KhachHangController {
     @Autowired
     private KhachHangService khachHangService;
-
     @GetMapping("/getds")
     public List<KhachHangDTO> layDSKhachHang() {
         return khachHangService.layDSKhachHang();
     }
-
     @GetMapping("/getloaikh")
     public List<KhachHangDTO> layDSKhachHangTheoLoaiKH(@RequestParam(value = "idLoaiKH") Integer idLoaiKH) {
             return khachHangService.layDSKhachHangTheoLoaiKH(idLoaiKH);
     }
-
     @GetMapping("/get")
     public KhachHangDTO layKhachHang(@RequestParam(value = "maKH") String maKH) {
         return khachHangService.layKhachHang(maKH);
     }
-
     @PostMapping("/post")
     public KhachHangDTO themKhachHang(@Valid @RequestBody KhachHangDTO khachHangDTO) {
         return khachHangService.themKhachHang(khachHangDTO);
     }
-
     @PutMapping("/put")
     public KhachHangDTO suaKhachHang(@Valid @RequestBody KhachHangDTO khachHangDTO) {
         return khachHangService.suaKhachHang(khachHangDTO);
     }
-
     @DeleteMapping("/delete/{maKH}")
     public void xoaGoiTap(@PathVariable String maKH) {
         khachHangService.xoaKhachHang(maKH);

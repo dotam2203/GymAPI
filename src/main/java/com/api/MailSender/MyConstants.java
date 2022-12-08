@@ -12,5 +12,5 @@ public class MyConstants {
     public static final String MY_PASSWORD = "akyfsgnsbwqoxyta";
 
     // And receiver!
-    public static final String FRIEND_EMAIL = "yourFriend@gmail.com";
+    public static final String FRIEND_EMAIL = "dotam5020@gmail.com";
 }

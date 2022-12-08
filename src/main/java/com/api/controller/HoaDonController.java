@@ -30,12 +30,10 @@ public class HoaDonController {
     public List<HoaDonDTO> layDSHoaDonTheoThe(@RequestParam(value = "maThe") String maThe) {
         return hoaDonService.layDSHoaDonTheoTheTap(maThe);
     }
-
     @GetMapping("/get")
     public HoaDonDTO layHoaDon(@RequestParam(value = "maHD") String maHD){
         return hoaDonService.layHoaDon(maHD);
     }
-
     @PostMapping("/post")
     public HoaDonDTO themHoaDon(@Valid @RequestBody HoaDonDTO hoaDonDTO) {
         return hoaDonService.themHoaDon(hoaDonDTO);
